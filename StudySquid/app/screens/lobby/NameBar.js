@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
-import { Text, TextInput, View, StyleSheet } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { TextInput, View, StyleSheet } from 'react-native';
 
-const NameBar = ({ players, setPlayers, index }) => {
+const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
+    const textInputRef = useRef(null);
+
+    useEffect(() => {
+        if (focused == index) textInputRef.current?.focus();
+    }, [focused]);
+
     const changeUsername = (newUsername) => {
         let newPlayers = [...players];
         newPlayers[index] = newUsername;
@@ -15,10 +21,23 @@ const NameBar = ({ players, setPlayers, index }) => {
     }
 
     return (
-        <View style={[styles.container, (index % 2) ? styles.lightBackground : styles.darkBackground]} >
-            <View style={styles.iconSection}></View>
-            <View style={styles.nameSection}><TextInput onChangeText={newUsername => changeUsername(newUsername)}>{players[index]}</TextInput></View>
-            <View style={styles.trashIcon} onTouchStart={() => { deletePlayer() }}></View>
+        <View
+            style={[styles.container, (index % 2) ? styles.lightBackground : styles.darkBackground]}
+        >
+            <View style={styles.iconSection} onTouchStart={() => { console.log("Change profile icon WIP!") }}></View>
+            <View style={styles.nameSection}>
+                <TextInput
+                    style={{ fontSize: 24, fontWeight: '800', paddingVertical: 12 }}
+                    ref={textInputRef}
+                    onChangeText={newUsername => changeUsername(newUsername)}
+                >
+                    {players[index]}
+                </TextInput>
+            </View>
+            <View
+                style={styles.trashIcon}
+                onTouchStart={() => { deletePlayer() }}
+            ></View>
         </View >
     );
 }
@@ -27,22 +46,29 @@ export default NameBar;
 
 const styles = StyleSheet.create({
     container: {
-        minWidth: '90%',
-        minHeight: 64,
+        width: '100%',
+        height: 64,
+        paddingHorizontal: 8,
+
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
     },
 
     iconSection: {
-        minHeight: 64,
-        minWidth: 64,
+        height: 48,
+        width: 48,
+        marginVertical: 'auto',
+        marginRight: 16,
+        padding: 0,
+        backgroundColor: 'blue',
+        borderRadius: 24
     },
 
     trashIcon: {
-        minHeight: 48,
-        minWidth: 48,
-        margin: 12,
+        minHeight: 32,
+        minWidth: 32,
+        marginVertical: 'auto',
         padding: 0,
         backgroundColor: 'red'
     },

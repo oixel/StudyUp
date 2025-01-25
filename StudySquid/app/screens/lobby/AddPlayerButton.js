@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button } from 'react-native'
+import { StyleSheet, View, Button } from 'react-native'
 import React from 'react'
 
 const AddPlayerButton = ({ players, setPlayers }) => {
