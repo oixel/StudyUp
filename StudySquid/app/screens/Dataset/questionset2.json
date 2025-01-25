@@ -1,0 +1,61 @@
+[ {
+    "word": "variable",
+    "definition": "a symbol that represents a value that can be changed"
+  },
+  {
+    "word": "data type",
+    "definition": "classification of a particular type of information. Is it text, integer, decimal???"
+  },
+  {
+    "word": "procedure",
+    "definition": "a method or subroutine of the computer"
+  },
+  {
+    "word": "parameter",
+    "definition": "the range or boundary of accepted values for the problem"
+  },
+  {
+    "word": "conditional",
+    "definition": "the computer program performs different actions depending on whether the situation is true or false"
+  },
+  {
+    "word": "iteration",
+    "definition": "the repetition of a process"
+  },
+  {
+    "word": "flowchart",
+    "definition": "the graphical representation of how to solve a problem"
+  },
+  {
+    "word": "pseudocode",
+    "definition": "programming that is in computer code and part is in human language or slang"
+  },
+  {
+    "word": "syntax error",
+    "definition": "a mistake in the structure or sequence of characters in a program, makes the program crash"
+  },
+  {
+    "word": "run-time",
+    "definition": "the period when the program is being executed"
+  },
+  {
+    "word": "logic errors",
+    "definition": "mistakes that cause the program to run incorrectly but not crash"
+  },
+  {
+    "word": "constant",
+    "definition": "the opposite of a variable. a value that never changes"
+  },
+  {
+    "word": "data structure",
+    "definition": "a way of storing/organizing information for the computer to use it efficiently (think of file cabinet)"
+  },
+  {
+    "word": "array",
+    "definition": "arrangement of items in an organized way such as a table/list: one type of a data structure"
+  },
+  {
+    "word": "algorithm",
+    "definition": "the step by step procedure to solving a problem"
+  }
+]
