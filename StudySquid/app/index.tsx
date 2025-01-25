@@ -1,5 +1,7 @@
 import { Text, View } from "react-native";
 
+import Lobby from "./screens/Lobby"
+
 export default function Index() {
   return (
     <View
@@ -9,7 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Hi Welcome to Squid Game!!!</Text>
+      <Lobby />
     </View>
   );
 }
