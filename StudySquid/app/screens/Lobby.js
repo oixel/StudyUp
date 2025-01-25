@@ -5,7 +5,7 @@ import PlayerBox from "./lobby/PlayerBox";
 import AddPlayerButton from "./lobby/AddPlayerButton";
 import StartButton from "./lobby/StartButton";
 
-const Lobby = () => {
+const Lobby = ({ screen, setScreen }) => {
     const [players, setPlayers] = useState([]);
 
     return (
@@ -13,7 +13,7 @@ const Lobby = () => {
             <Text style={styles.title}>Lobby</Text>
             <PlayerBox players={players} setPlayers={setPlayers} />
             <AddPlayerButton players={players} setPlayers={setPlayers} />
-            <StartButton />
+            <StartButton screen={screen} setScreen={setScreen} />
         </View>
     );
 }
