@@ -1,10 +1,7 @@
-import { Text, View , StyleSheet, Button} from 'react-native'
+import { Text, View, StyleSheet, Button } from 'react-native'
 import React, { Component, useState } from 'react'
 
-
-const names = ['Kriti', 'Kritika', 'Oixel', 'Divyanshi'];
-
- const Roulette = () =>{
+const Roulette = ({ players }) => {
   const [randomName, setRandomName] = useState('');
   const [spinning, setSpinning] = useState(false);
 
@@ -15,18 +12,18 @@ const names = ['Kriti', 'Kritika', 'Oixel', 'Divyanshi'];
     let counter = 0;
 
     const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * names.length);
-      setRandomName(names[randomIndex]);
+      const randomIndex = Math.floor(Math.random() * players.length);
+      setRandomName(players[randomIndex]);
       counter += 1;
 
       // Stop after 2 seconds (2000 ms)
       if (counter > 30) {
         clearInterval(interval);
         setSpinning(false);
-        const finalIndex = Math.floor(Math.random() * names.length); // Final random name
-        setRandomName(names[finalIndex]);
+        const finalIndex = Math.floor(Math.random() * players.length); // Final random name
+        setRandomName(players[finalIndex]);
       }
-    }, 50 ); // Change name every 100 ms
+    }, 50); // Change name every 100 ms
   };
 
   return (
@@ -58,4 +55,4 @@ const styles = StyleSheet.create({
 
 });
 
-  export default Roulette;
+export default Roulette;

@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import PlayerBox from "./lobby/PlayerBox";
 import AddPlayerButton from "./lobby/AddPlayerButton";
 import StartButton from "./lobby/StartButton";
 
-const Lobby = ({ screen, setScreen }) => {
-    const [players, setPlayers] = useState([]);
-
+const Lobby = ({ screen, setScreen, players, setPlayers }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Lobby</Text>

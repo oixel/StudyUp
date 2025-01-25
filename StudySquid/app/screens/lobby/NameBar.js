@@ -27,7 +27,7 @@ const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
             <View style={styles.iconSection} onTouchStart={() => { console.log("Change profile icon WIP!") }}></View>
             <View style={styles.nameSection}>
                 <TextInput
-                    style={{ fontSize: 24, fontWeight: '800', paddingVertical: 12 }}
+                    style={{ fontSize: 24, fontWeight: '600', paddingVertical: 12 }}
                     ref={textInputRef}
                     onChangeText={newUsername => changeUsername(newUsername)}
                 >
