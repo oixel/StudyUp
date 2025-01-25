@@ -1,17 +1,27 @@
-import React, { useEffect, useRef } from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { TextInput, View, StyleSheet, Keyboard } from 'react-native';
 
 const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
     const textInputRef = useRef(null);
 
+    const [newUsername, setNewUsername] = useState(players[index]);
+
     useEffect(() => {
+        // Sets focus on newly created Name Bar
         if (focused == index) textInputRef.current?.focus();
     }, [focused]);
 
-    const changeUsername = (newUsername) => {
-        let newPlayers = [...players];
-        newPlayers[index] = newUsername;
-        setPlayers(newPlayers);
+    const changeUsername = () => {
+        if (newUsername) {
+            let newPlayers = [...players];
+            newPlayers[index] = newUsername;
+            setPlayers(newPlayers);
+        }
+        else {
+            console.log("Not allowed")
+            setNewUsername(players[index]);
+            textInputRef.current.value = players[index];
+        }
     }
 
     const deletePlayer = () => {
@@ -29,9 +39,10 @@ const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
                 <TextInput
                     style={{ fontSize: 24, fontWeight: '600', paddingVertical: 12 }}
                     ref={textInputRef}
-                    onChangeText={newUsername => changeUsername(newUsername)}
+                    onChangeText={(input) => { setNewUsername(input) }}
+                    onSubmitEditing={() => { changeUsername(); }}
                 >
-                    {players[index]}
+                    {newUsername}
                 </TextInput>
             </View>
             <View
