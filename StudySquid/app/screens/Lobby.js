@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import PlayerBox from "./lobby/PlayerBox";
-import AddPlayer from "./lobby/AddPlayer";
+import AddPlayerButton from "./lobby/AddPlayerButton";
+import StartButton from "./lobby/StartButton";
 
 const Lobby = () => {
-    const [players, setPlayers] = useState(["Krithika", "Kriti", "Divyanshi", "Oixel"]);
+    const [players, setPlayers] = useState([]);
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Lobby</Text>
-            <PlayerBox style={styles.playerBox} players={players} />
-            <AddPlayer style={styles.addPlayer} />
+            <PlayerBox players={players} setPlayers={setPlayers} />
+            <AddPlayerButton players={players} setPlayers={setPlayers} />
+            <StartButton />
         </View>
     );
 }
