@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, Button } from 'react-native'
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 
 const Roulette = ({ players }) => {
   const [randomName, setRandomName] = useState('');
@@ -28,10 +28,20 @@ const Roulette = ({ players }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.customFont}>PLAYER TURN</Text>
-      <Text style={styles.text}>{randomName}</Text>
-      <Button title="Spin" onPress={getRandomName} disabled={spinning} />
-    </View>
+      {(!randomName || spinning) &&
+        <>
+          <Text style={styles.customFont}>WHO'S UP?</Text>
+          <Text style={styles.text}>{randomName}</Text>
+          <Button title="Spin" onPress={getRandomName} disabled={spinning} />
+        </>
+      }
+      {(randomName && !spinning) &&
+        <>
+          <Text style={styles.customFont}>It's your turn:</Text>
+          <Text style={styles.text}>{randomName}</Text>
+        </>
+      }
+    </View >
   );
 };
 
