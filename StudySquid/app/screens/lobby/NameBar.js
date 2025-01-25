@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { TextInput, View, StyleSheet, Keyboard } from 'react-native';
+import { TextInput, View, StyleSheet, Keyboard, Image } from 'react-native';
 
 const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
     const textInputRef = useRef(null);
@@ -45,10 +45,12 @@ const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
                     {newUsername}
                 </TextInput>
             </View>
-            <View
-                style={styles.trashIcon}
+            <Image
+                source={require('../../../assets/images/trashIcon.png')} // Adjust the path as needed
+                style={styles.iconImage}
                 onTouchStart={() => { deletePlayer() }}
-            ></View>
+            />
+
         </View >
     );
 }
@@ -75,13 +77,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         borderRadius: 24
     },
-
-    trashIcon: {
-        minHeight: 32,
-        minWidth: 32,
-        marginVertical: 'auto',
-        padding: 0,
-        backgroundColor: 'red'
+    iconImage: {
+        width: 40,  // Adjust the width of the image
+        height: 40, // Adjust the height of the image
+        resizeMode: 'contain', // Ensure the image is contained within the box
+        margin: 'auto'
     },
 
     nameSection: {
