@@ -5,9 +5,27 @@ import PlayerBox from "./lobby/PlayerBox";
 import AddPlayerButton from "./lobby/AddPlayerButton";
 import StartButton from "./lobby/StartButton";
 
+import  { useFonts } from 'expo-font';
+
+import { Raleway_400Regular } from '@expo-google-fonts/raleway';
+import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
+
+
 const Lobby = ({ screen, setScreen, players, setPlayers }) => {
     const [focused, setFocused] = useState(-1);
 
+    const [fontsLoaded] = useFonts({
+        Raleway_400Regular,
+        Quicksand_400Regular,
+        'Handjet': require('../../assets/fonts/Handjet.ttf'),
+    });
+
+
+
+    if (!fontsLoaded) {
+        return <Text>Loading fonts...</Text>;
+    }
+    
     return (
         <>
             <ImageBackground
@@ -36,7 +54,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        fontSize: 32
+        fontFamily: 'Handjet',
+        fontSize: 60,
     },
     backgroundImage: {
         position: 'absolute',
