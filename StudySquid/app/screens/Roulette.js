@@ -14,7 +14,7 @@ const Roulette = ({ screen, setScreen, players }) => {
 
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * players.length);
-      setRandomName(players[randomIndex]);
+      setRandomName(players[randomIndex].name);
       counter += 1;
 
       // Stop after 2 seconds (2000 ms)
@@ -22,7 +22,7 @@ const Roulette = ({ screen, setScreen, players }) => {
         clearInterval(interval);
         setSpinning(false);
         const finalIndex = Math.floor(Math.random() * players.length); // Final random name
-        setRandomName(players[finalIndex]);
+        setRandomName(players[finalIndex].name);
       }
     }, 50); // Change name every 100 ms
   };

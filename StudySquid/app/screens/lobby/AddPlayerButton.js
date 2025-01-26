@@ -3,7 +3,7 @@ import React from 'react'
 
 const AddPlayerButton = ({ players, setPlayers }) => {
     const addPlayer = () => {
-        setPlayers([...players, "New Player"]);
+        setPlayers([...players, { name: "New Player", score: 0 }]);
     }
 
     return (
