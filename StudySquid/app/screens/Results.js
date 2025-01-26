@@ -9,7 +9,6 @@ const Results = ({ screen, setScreen, questionSet, results, setResults }) => {
 
     return (
         <View>
-            <Text style={styles.title}> Results! </Text>
             <TouchableOpacity style={styles.button} onPress={() => { setResults({}); setScreen(screen + 1); }}>
                 <Text style={styles.buttonText}>Tap to view Leader Board!</Text>
             </TouchableOpacity>
