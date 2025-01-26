@@ -24,6 +24,11 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers
     }
 
     if (isActive) {
+        // Makes round end after 30 seconds
+        setTimeout(() => {
+            setScreen(screen + 1);
+        }, 30000);
+
         useEffect(() => {
             const subscription = DeviceMotion.addListener(({ rotation }) => {
                 phoneRotation = Math.abs(rotation.gamma) * 90;

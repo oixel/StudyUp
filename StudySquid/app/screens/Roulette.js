@@ -24,8 +24,12 @@ const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
         setRandomName(players[finalIndex].name);
 
         // Move to next screen after a short delay
-        setCurrentPlayer(finalIndex);
-        setScreen(screen + 1);
+        setTimeout(() => {
+          setCurrentPlayer(finalIndex);
+          setScreen(screen + 1);
+        }, 3000);  // Waits 3 seconds before moving to next screen
+
+        console.log("Hello")
       }
     }, 50); // Change name every 100 ms
   };
