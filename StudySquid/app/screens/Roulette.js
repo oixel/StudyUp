@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Button } from 'react-native'
+import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect } from 'react'
 
 const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
@@ -40,10 +40,11 @@ const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
             <Text style={styles.customFont}>WHO'S UP?</Text>
             <Text style={styles.text}>{randomName}</Text>
             {!spinning &&
-              <Button title="Spin"
-                onPress={getRandomName}
-                disabled={spinning}
-              />}
+            <>
+            <TouchableOpacity style={styles.button} onPress={getRandomName} disabled={spinning}>
+            <Text style={styles.spinText}>SPIN!</Text>
+            </TouchableOpacity>
+            </>}
           </>
         }
         {(randomName && !spinning) &&
@@ -52,12 +53,13 @@ const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
             <Text style={styles.text}>{randomName}</Text>
           </>
         }
-        {(!spinning && !randomName) && <Button
-          onPress={() => { setScreen(screen - 1) }}
-
-          title="Go Back"
-          color='white'
-        />}
+        
+        {(!spinning && !randomName) && 
+        <>
+          <TouchableOpacity style={styles.button} onPress={() => { setScreen(screen - 1) }}>
+            <Text style={styles.buttonText}>Go Back</Text>
+          </TouchableOpacity>
+        </>}
       </View >
     </>
   )
@@ -71,10 +73,10 @@ const styles = StyleSheet.create({
     marginTop: 100,
   },
   text: {
-    paddingHorizontal: 30,
-    paddingVertical: 10,
+    paddingHorizontal: 80,
+    paddingVertical: 15,
     borderWidth: 2,
-    borderColor: '#20232a',
+    borderColor: 'white',
     borderRadius: 6,
     fontFamily: 'PixelGame',
     fontSize: 30,
@@ -86,13 +88,39 @@ const styles = StyleSheet.create({
   customFont: {
     fontFamily: 'PixelGame',
     fontSize: 50,
-    marginBottom: 250,
+    marginBottom: 235,
   },
   backgroundImage: {
     position: 'absolute',
     width: "100%",
     height: "100%",
+  }, 
+  spinText: {
+    marginTop: 10,
+    paddingbottom: 4,
+    color: 'white',
+    paddingHorizontal: 25,
+    paddingVertical: 4,
+    borderWidth: 2,
+    borderColor: 'white',
+    borderRadius: 6,
+    fontFamily: 'PixelGame',
+    fontSize: 40,
+    backgroundColor: '#8baedb',
+  },
+  buttonText: {
+    marginTop: 80,
+    paddingTop: 4,
+    paddingHorizontal: 8,
+    borderWidth: 2,
+    borderColor: '#20232a',
+    borderRadius: 6,
+    fontFamily: 'PixelGame',
+    fontSize: 30,
+    backgroundColor: '#ffdacc',
+
   }
+  
 });
 
 export default Roulette;
