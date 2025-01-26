@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   title: {
-    fontFamily: 'PixelGame', // Custom font, optional
+    fontFamily: 'PixelGame',
     fontSize: 50,
     textAlign: 'center',
     color: 'black',
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   playerText: {
-    fontFamily: 'PixelGame', // Custom font, optional
+    fontFamily: 'PixelGame',
     fontSize: 25,
     textAlign: 'center',
     color: 'black',
