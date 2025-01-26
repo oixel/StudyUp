@@ -1,10 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { TextInput, View, StyleSheet, Image } from 'react-native';
 
-const NameBar = ({ index, players, setPlayers }) => {
+const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
     const textInputRef = useRef(null);
 
     const [newUsername, setNewUsername] = useState(players[index].name);
+
+    // Ensures that currently typed, new username gets stored when a new text box gets clicked
+    useEffect(() => {
+        if (focused != index) {
+            changeUsername();
+        }
+    }, [focused]);
 
     const changeUsername = () => {
         if (newUsername) {
@@ -38,10 +45,11 @@ const NameBar = ({ index, players, setPlayers }) => {
                 <TextInput
                     style={{ fontSize: 24, fontWeight: '600', paddingVertical: 12 }}
                     ref={textInputRef}
-                    onChangeText={(input) => { setNewUsername(input) }}
-                    onSubmitEditing={() => { changeUsername(); }}
+                    value={newUsername}
+                    onChangeText={(text) => { if (text.length <= 9) { setNewUsername(text) } }}
+                    onSubmitEditing={changeUsername}
+                    onTouchStart={() => { setFocused(index) }}
                 >
-                    {newUsername}
                 </TextInput>
             </View>
             <Image

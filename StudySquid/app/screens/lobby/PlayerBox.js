@@ -1,9 +1,11 @@
 import { View, StyleSheet, ScrollView } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import NameBar from "./NameBar";
 
 const PlayerBox = ({ players, setPlayers }) => {
+    const [focused, setFocused] = useState(-1);
+
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
             {players.map((_, index) => (
@@ -12,6 +14,8 @@ const PlayerBox = ({ players, setPlayers }) => {
                         index={index}
                         players={players}
                         setPlayers={setPlayers}
+                        focused={focused}
+                        setFocused={setFocused}
                     />
                 </View>
             ))}
