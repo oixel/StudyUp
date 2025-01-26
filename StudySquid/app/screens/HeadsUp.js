@@ -93,10 +93,10 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers
     let backgroundColor = "white";
 
     if (rotationState === "forward") {
-        backgroundColor = "green";
+        backgroundColor = "lightgreen";
     }
     else if (rotationState === "backward") {
-        backgroundColor = "red";
+        backgroundColor = "#B25D71";
     }
 
     return (
@@ -120,6 +120,8 @@ const styles = StyleSheet.create({
 
     },
     questionText: {
-        fontSize: 120
+        fontFamily: 'PixelGame',
+        fontSize: 85
+        ,
     }
 })

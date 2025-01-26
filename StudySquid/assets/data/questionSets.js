@@ -197,6 +197,26 @@ const questionSets =
             {
                 "question": "Domino's",
                 "answer": "A global icon in the pizza industry, delivering not just delicious food but also unmatched convenience and customer service with innovative ordering experiences."
+            },
+            {
+                "question": "MathWorks",
+                "answer": "A visionary in mathematical computing, revolutionizing industries with powerful tools like MATLAB and Simulink, driving innovation in engineering, science, and AI."
+            },
+            {
+                "question": "Uppercrust",
+                "answer": "A refined culinary experience, known for its artisanal craftsmanship and commitment to high-quality ingredients, delivering an elevated dining delight with every bite."
+            },
+            {
+                "question": "Satchel's Pizza",
+                "answer": "A Gainesville gem, blending artistic ambiance with handcrafted, flavor-packed pizzas, creating a one-of-a-kind experience that keeps guests coming back for more."
+            },
+            {
+                "question": "4 Rivers Smokehouse",
+                "answer": "A legend in barbecue, serving up mouthwatering smoked meats with a perfect blend of tradition and innovation, bringing people together over unforgettable flavors."
+            },
+            {
+                "question": "UF SwampHacks",
+                "answer": "An electrifying hackathon experience at the University of Florida, fostering collaboration, creativity, and groundbreaking projects that push the boundaries of technology."
             }
         ]
     ];
