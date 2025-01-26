@@ -73,18 +73,21 @@ export default function Index() {
         <HeadsUp
           screen={screen}
           setScreen={setScreen}
-          isActive={screen == 5}
+          isActive={screen === 5}
           questionSet={questionSet}
           players={players}
           setPlayers={setPlayers}
           currentPlayer={currentPlayer}
           seenQuestions={seenQuestions}
           setSeenQuestions={setSeenQuestions}
+          results={results}
+          setResults={setResults}
         />}
       {screen == 6 &&
         <Results
           screen={screen}
           setScreen={setScreen}
+          questionSet={questionSet}
           results={results}
           setResults={setResults}
         />}
