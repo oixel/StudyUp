@@ -19,6 +19,19 @@ This game has a minimum of 2 players. <br>
 7. Time for another game! Choose another player to go.
 8. Once all players have gone, or you have clicked exit, view the leaderboard stats!
 
+# Installation
+The following steps highlight how to download and gain access to StudyUp!
+1. Ensure that npm is installed on your computer and the "Expo Go" app is installed on your phone.
+2. Clone this repository and cd into it.
+3. When in the StudyUp directory, run "npm install". This will download most of the necessary dependencies.
+4. Then, run the following commands to download to rest of the required assets:
+    - npx react-native-asset
+    - npx expo install @expo-google-fonts/raleway @expo-google-fonts/quicksand expo-font expo-splash-screen
+    - npx expo install @expo-google-fonts/handjet
+    - npm install expo-sensors
+5. run "npm start" and then scan the QR code using your mobile device.
+6. Enjoy your studying!
+
 # Sneak Peak
 <img src=https://github.com/user-attachments/assets/2eb96d65-33d7-4167-be98-22c45960e4bf width=25% height=25%>
 <img src=https://github.com/user-attachments/assets/f271bca1-66d1-42ca-bf72-35a1d51bd4c6 width=25% height=25%>
