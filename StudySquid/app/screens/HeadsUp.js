@@ -68,7 +68,6 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers
             let index = -1;
 
             if (questionSet.length === seenQuestions.length) {
-                console.log("Hit the end. Program moving to next screen");
                 setSeenQuestions([]);
                 setScreen(screen + 1);
                 return;
