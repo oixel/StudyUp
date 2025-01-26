@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import { useFonts } from 'expo-font';
 
@@ -14,10 +14,6 @@ const Welcome = ({ screen, setScreen }) => {
         'PixelGame': require('../../assets/fonts/PixelGame.otf'),
         'KarmaticArcade': require('../../assets/fonts/ka1.ttf')
     });
-
-    if (!fontsLoaded) {
-        return <Text>Loading fonts...</Text>;
-    }
 
     return (
         <>

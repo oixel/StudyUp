@@ -1,19 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground,TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, Button } from 'react-native';
 import { useFonts } from 'expo-font';
 
-const LeaderBoard = ({setScreen, players}) => {
+const LeaderBoard = ({ setScreen, players }) => {
   const [fontsLoaded] = useFonts({
     'PixelGame': require('../../assets/fonts/PixelGame.otf'),
   });
 
   // Sort players by score
-    const sortedPlayers = players.sort((a, b) => b.score - a.score);
+  const sortedPlayers = players.sort((a, b) => b.score - a.score);
 
   return (
     <>
       <ImageBackground
-        source={require('../../assets/images/LeaderboardVertical.png')} 
+        source={require('../../assets/images/LeaderboardVertical.png')}
         style={styles.backgroundImage}
       >
         <View style={styles.container}>
@@ -27,8 +27,8 @@ const LeaderBoard = ({setScreen, players}) => {
               </Text>
             </View>
           ))}
-          <TouchableOpacity style={styles.button} onPress={() => {setScreen(3) }}>
-          <Text style={styles.buttonText}>Next Player!</Text>
+          <TouchableOpacity style={styles.button} onPress={() => { setScreen(3) }}>
+            <Text style={styles.buttonText}>Next Player!</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     fontSize: 80,
     textAlign: 'center',
     color: 'black',
+    textDecorationLine: 'underline',
     marginBottom: 30,
   },
   playerRow: {

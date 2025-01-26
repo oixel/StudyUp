@@ -1,4 +1,4 @@
-import { StyleSheet, View, Button } from 'react-native'
+import { Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const AddPlayerButton = ({ players, setPlayers }) => {
@@ -7,25 +7,31 @@ const AddPlayerButton = ({ players, setPlayers }) => {
     }
 
     return (
-        <View style={styles.addPlayerButton}>
-            <Button
-                onPress={() => addPlayer()}
-                title="+ Add Player"
-                accessibilityLabel="Add a new player to lobby."
-                color='white'
-            />
-        </View>
+        <TouchableOpacity
+            style={styles.button}
+            activeOpacity={0.7}
+            onPress={() => { addPlayer() }}>
+            <Text style={styles.buttonText}>+ Add Player</Text>
+        </TouchableOpacity>
     )
 }
 
 export default AddPlayerButton
 
 const styles = StyleSheet.create({
-    addPlayerButton: {
+    button: {
         minWidth: '90%',
         minHeight: 48,
         backgroundColor: "rgb(86, 162, 144)",
         justifyContent: 'center',
-        borderRadius: 12
+        borderRadius: 8
     },
+    buttonText: {
+        textAlign: 'center',
+        fontFamily: "Handjet",
+        fontSize: 28,
+        paddingTop: 0,
+        fontWeight: '600',
+        color: "rgb(33, 76, 66)",
+    }
 })

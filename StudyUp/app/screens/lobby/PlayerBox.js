@@ -32,8 +32,9 @@ const styles = StyleSheet.create({
         maxWidth: '90%',
         minHeight: 250,
         maxHeight: 250,
-        borderRadius: 12,
+        borderRadius: 8,
         backgroundColor: "lightgrey",
+        borderWidth: 3
     },
 });
 

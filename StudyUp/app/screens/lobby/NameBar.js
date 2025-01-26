@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { TextInput, View, StyleSheet, Image } from 'react-native';
 
+const MAX_CHAR_COUNT = 10;
+
 const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
     const textInputRef = useRef(null);
 
@@ -43,10 +45,10 @@ const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
 
             <View style={styles.nameSection}>
                 <TextInput
-                    style={{ fontSize: 24, fontWeight: '600', paddingVertical: 12 }}
+                    style={{ fontSize: 32, fontWeight: '400', paddingVertical: 12, fontFamily: "Handjet" }}
                     ref={textInputRef}
                     value={newUsername}
-                    onChangeText={(text) => { if (text.length <= 9) { setNewUsername(text) } }}
+                    onChangeText={(text) => { if (text.length <= MAX_CHAR_COUNT) { setNewUsername(text) } }}
                     onSubmitEditing={changeUsername}
                     onTouchStart={() => { setFocused(index) }}
                 >

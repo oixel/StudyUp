@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import { useFonts } from 'expo-font';
 import { Raleway_400Regular } from '@expo-google-fonts/raleway';
@@ -8,17 +8,13 @@ import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 import questionData from '../../assets/data/questionSets';
 
 
-const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
+const SetSelector = ({ screen, setScreen, setQuestionSet }) => {
     const [fontsLoaded] = useFonts({
         Raleway_400Regular,
         Quicksand_400Regular,
         'Handjet': require('../../assets/fonts/Handjet.ttf'),
         'PixelGame': require('../../assets/fonts/PixelGame.otf'),
     });
-
-    if (!fontsLoaded) {
-        return <Text>Loading fonts...</Text>;
-    }
 
     // Parse JSON question data from data files into array and move to next screen
     function loadQuestionSet(index) {
@@ -39,9 +35,9 @@ const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
                     </TouchableOpacity>
                 ))}
                 <TouchableOpacity style={styles.button} onPress={() => { setScreen(screen - 1) }}>
-                <Text style={styles.buttonText}>Go Back</Text>
+                    <Text style={styles.buttonText}>Go Back</Text>
                 </TouchableOpacity>
-                
+
             </View>
         </>
 
@@ -73,12 +69,13 @@ const styles = StyleSheet.create({
         fontFamily: 'PixelGame',
         fontSize: 40,
         backgroundColor: '#F1EBB8',
+        paddingTop: 5
     },
     backgroundImage: {
         position: 'absolute',
         width: "100%",
         height: "100%",
-    }, 
+    },
     buttonText: {
         marginTop: 40,
         paddingTop: 4,
@@ -90,5 +87,5 @@ const styles = StyleSheet.create({
         fontSize: 30,
         backgroundColor: '#ffdacc',
 
-      }
+    }
 });

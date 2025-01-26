@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const QuestionBar = (questionSet, question, result) => {
+const QuestionBar = (question, result) => {
     console.log(question);
     console.log(result);
 

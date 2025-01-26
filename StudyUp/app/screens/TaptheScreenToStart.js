@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
 import { useFonts } from 'expo-font';
@@ -13,10 +13,6 @@ const TaptheScreenToStart = ({ screen, setScreen }) => {
         'Handjet': require('../../assets/fonts/Handjet.ttf'),
         'PixelGame': require('../../assets/fonts/PixelGame.otf'),
     });
-
-    if (!fontsLoaded) {
-        return <Text>Loading fonts...</Text>;
-    }
 
     return (
         <>

@@ -8,7 +8,6 @@ import SetSelector from "./screens/setSelector";
 import Roulette from "./screens/Roulette";
 import TaptheScreenToStart from "./screens/TaptheScreenToStart";
 import HeadsUp from "./screens/HeadsUp";
-import Results from "./screens/Results";
 import LeaderBoard from "./screens/LeaderBoard";
 
 export default function Index() {
@@ -54,7 +53,6 @@ export default function Index() {
         <SetSelector
           screen={screen}
           setScreen={setScreen}
-          questionSet={questionSet}
           setQuestionSet={setQuestionSet}
         />}
       {screen == 3 &&

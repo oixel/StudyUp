@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
   },
   spinText: {
     marginTop: 10,
+    paddingTop: 8,
     paddingbottom: 4,
     color: 'white',
     paddingHorizontal: 25,

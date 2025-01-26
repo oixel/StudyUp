@@ -1,27 +1,34 @@
-import { StyleSheet, View, Button } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const StartButton = ({ screen, setScreen, players }) => {
     return (
-        <View style={styles.startButton}>
-            <Button
-                onPress={() => { if (players.length > 1) setScreen(screen + 1) }}
-                title="Start Studying!"
-                accessibilityLabel="Start studying!"
-                color="rgb(6, 116, 90)"
-            />
-        </View>
+        <TouchableOpacity
+            style={styles.button}
+            activeOpacity={0.7}
+            onPress={() => { if (players.length > 1) setScreen(screen + 1) }}
+        >
+            <Text style={styles.buttonText}>Start Studying!</Text>
+        </TouchableOpacity>
     )
 }
 
 export default StartButton
 
 const styles = StyleSheet.create({
-    startButton: {
+    button: {
         minWidth: '90%',
         minHeight: 48,
         backgroundColor: "#ffd1c3",
         justifyContent: 'center',
-        borderRadius: 12,
+        borderRadius: 8
     },
+    buttonText: {
+        textAlign: 'center',
+        fontFamily: "Handjet",
+        fontSize: 28,
+        paddingTop: 0,
+        fontWeight: '600',
+        color: "#875b4d",
+    }
 })
