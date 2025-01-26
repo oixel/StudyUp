@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, Button } from 'react-native';
 
 import { useFonts } from 'expo-font';
 import { Raleway_400Regular } from '@expo-google-fonts/raleway';
@@ -45,6 +45,12 @@ const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
                         <Text style={styles.text}>{set}</Text>
                     </TouchableOpacity>
                 ))}
+
+                <Button
+                onPress={() => { setScreen(screen - 1)}}
+                title="Go Back"
+                color='black'
+                />
             </View>
         </>
 

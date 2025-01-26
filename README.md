@@ -13,10 +13,11 @@ The countless benefits of group studying include improved understanding, increas
 This game has a minimum of 2 players. <br>
 1. Click **+ Add Player** and add the corresponding name.
 2. When you're ready, click **Start Studying!** to choose a set.
-3. After choosing a set, start playing by placing the phone on your forehead! If you get a question right, lift the phone up. If you can't seem to get it right, turn it down.
-4. Post x amount of time, you will be able to see the terminologies you passed and missed.
-5. Time for another game! Choose another player to go.
-6. Once all players have gone, or you have clicked exit, view the leaderboard!
+4. After choosing a set, the roulette reveals the upcoming player.
+5. Start playing by placing the phone on your forehead! If you get a question right, lift the phone up. If you can't seem to get it right, turn it down.
+6. Post x amount of time, you will be able to see the terminologies you passed and missed.
+7. Time for another game! Choose another player to go.
+8. Once all players have gone, or you have clicked exit, view the leaderboard stats!
 
 # Sneak Peak (insert images)
 
