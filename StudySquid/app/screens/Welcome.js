@@ -40,7 +40,7 @@ const WelcomeScreen = ( { setScreen }) => {
                 <Text style={styles.title2}>Study</Text>
                 <Text style={styles.title2}>Up!</Text>
                 <TouchableOpacity style={styles.button} onPress={() => console.log('Change to Lobby')}>
-                    <Text style={styles.buttonText}>Start!</Text>
+                    <Text style={styles.buttonText}>Start!</Text> 
                 </TouchableOpacity>
             </View>
         </>
@@ -48,6 +48,8 @@ const WelcomeScreen = ( { setScreen }) => {
 }
 export default WelcomeScreen;
 
+
+// styling
 const styles = StyleSheet.create({
     container: {
         flex: 1,
