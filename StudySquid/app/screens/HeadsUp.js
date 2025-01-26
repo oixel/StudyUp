@@ -7,7 +7,7 @@ var phoneRotation = 0;
 const passedRange = [40, 90];
 const correctRange = [190, 250];
 
-const HeadsUp = ({ screen, setScreen, isActive, questionSet }) => {
+const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers, currentPlayer }) => {
     rotation = { angle: 0 };
 
     DeviceMotion.setUpdateInterval(50);
@@ -55,6 +55,11 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet }) => {
         }
         else if (rotationState == "forward") {
             setQuestion("Correct!");
+
+            // Increment current player's score by 1
+            let newPlayers = players;
+            newPlayers[currentPlayer] = { name: newPlayers[currentPlayer].name, score: newPlayers[currentPlayer].score + 1 };
+            setPlayers(newPlayers);
         }
         else {
             let index = -1;
