@@ -29,6 +29,7 @@ The following steps highlight how to download and gain access to StudyUp!
     - npx expo install @expo-google-fonts/raleway @expo-google-fonts/quicksand expo-font expo-splash-screen
     - npx expo install @expo-google-fonts/handjet
     - npm install expo-sensors
+        - NOTE: This one may fail, that is completely fine.
 5. run "npm start" and then scan the QR code using your mobile device.
 6. Enjoy your studying!
 
