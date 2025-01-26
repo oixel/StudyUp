@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
 
 import { useFonts } from 'expo-font';
 import { Raleway_400Regular } from '@expo-google-fonts/raleway';
@@ -9,8 +9,6 @@ import questionData from '../../assets/data/questionSets';
 
 
 const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
-    const [focused, setFocused] = useState(-1);
-
     const [fontsLoaded] = useFonts({
         Raleway_400Regular,
         Quicksand_400Regular,
@@ -30,11 +28,6 @@ const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
 
     return (
         <>
-            <ImageBackground
-                source={require('../../assets/images/FullStartScreen.png')}
-                style={styles.backgroundImage}
-                onTouchStart={() => setFocused(-1)}
-            />
             <View style={styles.container}>
                 <Text style={styles.title}>Select Study Set!</Text>
 
@@ -47,9 +40,9 @@ const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
                 ))}
 
                 <Button
-                onPress={() => { setScreen(screen - 1)}}
-                title="Go Back"
-                color='black'
+                    onPress={() => { setScreen(screen - 1) }}
+                    title="Go Back"
+                    color='black'
                 />
             </View>
         </>
@@ -87,6 +80,5 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: "100%",
         height: "100%",
-    }
-
+    },
 });

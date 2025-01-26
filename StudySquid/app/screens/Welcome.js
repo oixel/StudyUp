@@ -21,10 +21,7 @@ const Welcome = ({ screen, setScreen }) => {
 
     return (
         <>
-            <ImageBackground
-                source={require('../../assets/images/FullStartScreen.png')}
-                style={styles.backgroundImage}
-            />
+
 
             <View style={styles.container}>
                 <Text style={styles.title}>Welcome to</Text>
@@ -59,12 +56,6 @@ const styles = StyleSheet.create({
         marginBottom: 0,
         color: "rgb(77, 91, 111)",
         alignItems: 'center',
-    },
-    backgroundImage: {
-        flex: 1,
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
     },
     button: {
         marginTop: 35,

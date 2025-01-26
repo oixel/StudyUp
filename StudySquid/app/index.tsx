@@ -1,9 +1,9 @@
-import { View } from "react-native";
+import { View, ImageBackground, StyleSheet } from "react-native";
 import { useState } from "react";
 
 import Welcome from "./screens/Welcome";
 import Lobby from "./screens/Lobby";
-import SetSelector from "./screens/SetSelector";
+import SetSelector from "./screens/setSelector";
 import Roulette from "./screens/Roulette";
 import TaptheScreenToStart from "./screens/TaptheScreenToStart";
 import HeadsUp from "./screens/HeadsUp";
@@ -29,6 +29,11 @@ export default function Index() {
       <StatusBar hidden />
 
       {/* Display screen based on current screen state */}
+      <ImageBackground
+        source={require('../assets/images/FullStartScreen.png')}
+        style={styles.backgroundImage}
+      />
+
       {screen == 0 && <Welcome screen={screen} setScreen={setScreen} />}
       {screen == 1 && <Lobby screen={screen} setScreen={setScreen} players={players} setPlayers={setPlayers} />}
       {screen == 2 && <SetSelector screen={screen} setScreen={setScreen} questionSet={questionSet} setQuestionSet={setQuestionSet} />}
@@ -39,3 +44,13 @@ export default function Index() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  }
+});
+

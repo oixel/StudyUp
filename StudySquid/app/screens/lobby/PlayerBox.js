@@ -3,11 +3,7 @@ import React, { useState, useEffect } from 'react'
 
 import NameBar from "./NameBar";
 
-const PlayerBox = ({ players, setPlayers, focused, setFocused }) => {
-    useEffect(() => {
-        setFocused(players.length - 1);
-    }, [players.length])
-
+const PlayerBox = ({ players, setPlayers }) => {
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
             {players.map((_, index) => (
@@ -16,8 +12,6 @@ const PlayerBox = ({ players, setPlayers, focused, setFocused }) => {
                         index={index}
                         players={players}
                         setPlayers={setPlayers}
-                        focused={focused}
-                        setFocused={setFocused}
                     />
                 </View>
             ))}

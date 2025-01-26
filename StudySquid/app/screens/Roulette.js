@@ -1,10 +1,9 @@
-import { Text, View, StyleSheet, Button, ImageBackground } from 'react-native'
+import { Text, View, StyleSheet, Button } from 'react-native'
 import React, { useState, useEffect } from 'react'
 
 const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
   const [randomName, setRandomName] = useState('');
   const [spinning, setSpinning] = useState(false);
-  const [focused, setFocused] = useState(-1);
 
   const getRandomName = () => {
     if (spinning) return; // Prevent triggering if already spinning
@@ -33,11 +32,6 @@ const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
 
   return (
     <>
-      <ImageBackground
-        source={require('../../assets/images/FullStartScreen.png')}
-        style={styles.backgroundImage}
-        onTouchStart={() => setFocused(-1)}
-      />
       <View style={styles.container}>
         {(!randomName || spinning) &&
           <>
@@ -52,12 +46,12 @@ const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
             <Text style={styles.text}>{randomName}</Text>
           </>
         }
-       <Button
-                onPress={() => { setScreen(screen - 1) }}
+        {!spinning && <Button
+          onPress={() => { setScreen(screen - 1) }}
 
-                title="Go Back"
-                color='white'
-            />
+          title="Go Back"
+          color='white'
+        />}
       </View >
     </>
   )
@@ -81,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FADADD',
     marginBottom: 20,
     marginTop: 30,
-    
+
   },
   customFont: {
     fontFamily: 'PixelGame',

@@ -12,8 +12,6 @@ import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 
 
 const Lobby = ({ screen, setScreen, players, setPlayers }) => {
-    const [focused, setFocused] = useState(-1);
-
     const [fontsLoaded] = useFonts({
         Raleway_400Regular,
         Quicksand_400Regular,
@@ -29,15 +27,9 @@ const Lobby = ({ screen, setScreen, players, setPlayers }) => {
 
     return (
         <>
-            <ImageBackground
-                source={require('../../assets/images/FullStartScreen.png')}
-                style={styles.backgroundImage}
-                onTouchStart={() => setFocused(-1)}
-            />
-
             <View style={styles.container}>
                 <Text style={styles.title}>Lobby</Text>
-                <PlayerBox players={players} setPlayers={setPlayers} focused={focused} setFocused={setFocused} />
+                <PlayerBox players={players} setPlayers={setPlayers} />
                 <AddPlayerButton players={players} setPlayers={setPlayers} />
                 <StartButton screen={screen} setScreen={setScreen} players={players} />
             </View>
