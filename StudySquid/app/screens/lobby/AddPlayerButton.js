@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     addPlayerButton: {
         minWidth: '90%',
         minHeight: 48,
-        backgroundColor: 'blue',
+        backgroundColor: "rgb(20, 27, 103)",
         justifyContent: 'center',
         borderRadius: 12
     },
