@@ -3,13 +3,11 @@ import React, { useState, useEffect } from 'react'
 import { DeviceMotion } from 'expo-sensors';
 
 var phoneRotation = 0;
-var passRotation = 40;
-var correctRotation = 230;
 
 const passedRange = [40, 90];
 const correctRange = [190, 250];
 
-const HeadsUp = ({ isActive }) => {
+const HeadsUp = ({ screen, setScreen, isActive }) => {
     rotation = { angle: 0 };
 
     DeviceMotion.setUpdateInterval(50);
@@ -63,9 +61,19 @@ const HeadsUp = ({ isActive }) => {
             let index = -1;
 
             while (true) {
+                if (questionSet.length === seenQuestions.length) {
+                    console.log("Hit the end. Program moving to next screen");
+                    setSeenQuestions([]);
+                    setScreen(screen + 1);
+                    break;
+                }
+
                 index = Math.floor(Math.random() * questionSet.length);
-                console.log(questionSet[index]);
-                if (!seenQuestions.includes(index)) break;
+
+                if (!seenQuestions.includes(index)) {
+                    setSeenQuestions([...seenQuestions, index])
+                    break;
+                }
             }
 
             setQuestion(questionSet[index]);
