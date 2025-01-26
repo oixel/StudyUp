@@ -3,7 +3,14 @@ import React from 'react'
 
 const AddPlayerButton = ({ players, setPlayers }) => {
     const addPlayer = () => {
-        setPlayers([...players, { name: `Player ${players.length + 1}`, score: 0 }]);
+        setPlayers(
+            [...players,
+            {
+                name: `Player ${players.length + 1}`,
+                id: (players.length) ? players[players.length - 1].id + 1 : 0,
+                score: 0
+            }
+            ]);
     }
 
     return (

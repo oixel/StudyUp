@@ -8,8 +8,8 @@ const PlayerBox = ({ players, setPlayers }) => {
 
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
-            {players.map((_, index) => (
-                <View key={index}>
+            {players.map((player, index) => (
+                <View key={player.id}>
                     <NameBar
                         index={index}
                         players={players}

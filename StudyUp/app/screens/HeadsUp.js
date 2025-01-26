@@ -82,7 +82,7 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers
 
             // Increment current player's score by 1
             let newPlayers = players;
-            newPlayers[currentPlayer] = { name: newPlayers[currentPlayer].name, score: newPlayers[currentPlayer].score + 1 };
+            newPlayers[currentPlayer] = { name: newPlayers[currentPlayer].name, id: newPlayers[currentPlayer].id, score: newPlayers[currentPlayer].score + 1 };
             setPlayers(newPlayers);
 
             // Add correct answer to results
