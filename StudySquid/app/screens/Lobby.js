@@ -5,7 +5,7 @@ import PlayerBox from "./lobby/PlayerBox";
 import AddPlayerButton from "./lobby/AddPlayerButton";
 import StartButton from "./lobby/StartButton";
 
-import  { useFonts } from 'expo-font';
+import { useFonts } from 'expo-font';
 
 import { Raleway_400Regular } from '@expo-google-fonts/raleway';
 import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
@@ -26,7 +26,7 @@ const Lobby = ({ screen, setScreen, players, setPlayers }) => {
     if (!fontsLoaded) {
         return <Text>Loading fonts...</Text>;
     }
-    
+
     return (
         <>
             <ImageBackground
