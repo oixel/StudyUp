@@ -17,7 +17,7 @@ const WelcomeScreen = ( { setScreen }) => {
         Quicksand_400Regular,
         'Handjet': require('../../assets/fonts/Handjet.ttf'),
         'PixelGame': require('../../assets/fonts/PixelGame.otf'),
-        'FontName': require('../../assets/fonts/PixelGame.otf')
+        'KarmaticArcade': require('../../assets/fonts/ka1.ttf')
     });
 
 
@@ -35,7 +35,8 @@ const WelcomeScreen = ( { setScreen }) => {
 
             <View style={styles.container}>
                 <Text style={styles.title}>Welcome to</Text>
-                <Text style={styles.title2}>Study Up!</Text>
+                <Text style={styles.title2}>Study</Text>
+                <Text style={styles.title2}>Up!</Text>
             </View>
         </>
     );
@@ -55,10 +56,11 @@ const styles = StyleSheet.create({
         color: "rgb(77, 91, 111)"
     },
     title2: {
-        fontFamily: 'PixelGame',
+        fontFamily: 'KarmaticArcade',
         fontSize: 65,
-        marginBottom: -15,
-        color: "rgb(77, 91, 111)"
+        marginBottom: 0,
+        color: "rgb(77, 91, 111)",
+        alignItems: 'center',
     },
     backgroundImage: {
         flex: 1,
