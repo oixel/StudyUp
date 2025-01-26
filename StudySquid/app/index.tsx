@@ -4,6 +4,7 @@ import { useState } from "react";
 import Lobby from "./screens/Lobby"
 import Roulette from "./screens/Roulette"
 import HeadsUp from "./screens/HeadsUp"
+import TaptheScreenToStart from "./screens/TaptheScreenToStart";
 
 export default function Index() {
   const [screen, setScreen] = useState(1);
@@ -22,6 +23,7 @@ export default function Index() {
       {/* {screen == 2 && <SetList />} */}
       {screen == 2 && <Roulette players={players} />}
       {screen == 3 && <HeadsUp isActive={screen == 3} />}
+      {screen == 4 && <TaptheScreenToStart />}
     </View>
   );
 }
