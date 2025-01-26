@@ -38,12 +38,10 @@ const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
                         <Text style={styles.text}>{set}</Text>
                     </TouchableOpacity>
                 ))}
-
-                <Button
-                    onPress={() => { setScreen(screen - 1) }}
-                    title="Go Back"
-                    color='black'
-                />
+                <TouchableOpacity style={styles.button} onPress={() => { setScreen(screen - 1) }}>
+                <Text style={styles.buttonText}>Go Back</Text>
+                </TouchableOpacity>
+                
             </View>
         </>
 
@@ -65,7 +63,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         fontFamily: 'PixelGame',
         fontSize: 50,
-        marginBottom: 30,
+        marginBottom: 25,
     },
     text: {
         paddingHorizontal: 8,
@@ -73,12 +71,24 @@ const styles = StyleSheet.create({
         borderColor: '#20232a',
         borderRadius: 6,
         fontFamily: 'PixelGame',
-        fontSize: 30,
+        fontSize: 40,
         backgroundColor: '#F1EBB8',
     },
     backgroundImage: {
         position: 'absolute',
         width: "100%",
         height: "100%",
-    },
+    }, 
+    buttonText: {
+        marginTop: 40,
+        paddingTop: 4,
+        paddingHorizontal: 8,
+        borderWidth: 2,
+        borderColor: '#20232a',
+        borderRadius: 6,
+        fontFamily: 'PixelGame',
+        fontSize: 30,
+        backgroundColor: '#ffdacc',
+
+      }
 });
