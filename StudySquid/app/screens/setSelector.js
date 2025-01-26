@@ -39,7 +39,7 @@ const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
                 <Text style={styles.title}>Select Study Set!</Text>
 
                 {/* Buttons for each study set */}
-                {['SWAMPHACK TRIVIA!', 'Anatomy', 'Data Structure', 'Zoology'].map((set, index) => (
+                {['Anatomy', 'Data Structure', 'Zoology', 'SWAMPHACK TRIVIA!'].map((set, index) => (
                     <TouchableOpacity index={index} key={index} onPress={() => { loadQuestionSet(index); }
                     }>
                         <Text style={styles.text}>{set}</Text>
