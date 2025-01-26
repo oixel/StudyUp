@@ -2,3 +2,7 @@
 
 # dependencies
 node_modules/
+
+tsconfig.json
+expo-evn.d.ts
+react-native.config.js
