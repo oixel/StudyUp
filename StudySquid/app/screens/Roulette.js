@@ -1,5 +1,5 @@
-import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
 
 const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
   const [randomName, setRandomName] = useState('');
@@ -40,26 +40,26 @@ const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
             <Text style={styles.customFont}>WHO'S UP?</Text>
             <Text style={styles.text}>{randomName}</Text>
             {!spinning &&
-            <>
-            <TouchableOpacity style={styles.button} onPress={getRandomName} disabled={spinning}>
-            <Text style={styles.spinText}>SPIN!</Text>
-            </TouchableOpacity>
-            </>}
+              <>
+                <TouchableOpacity style={styles.button} onPress={getRandomName} disabled={spinning}>
+                  <Text style={styles.spinText}>SPIN!</Text>
+                </TouchableOpacity>
+              </>}
           </>
         }
         {(randomName && !spinning) &&
           <>
-            <Text style={styles.customFont}>It's your turn:</Text>
+            <Text style={styles.customFont}>You're Up!</Text>
             <Text style={styles.text}>{randomName}</Text>
           </>
         }
-        
-        {(!spinning && !randomName) && 
-        <>
-          <TouchableOpacity style={styles.button} onPress={() => { setScreen(screen - 1) }}>
-            <Text style={styles.buttonText}>Go Back</Text>
-          </TouchableOpacity>
-        </>}
+
+        {(!spinning && !randomName) &&
+          <>
+            <TouchableOpacity style={styles.button} onPress={() => { setScreen(screen - 1) }}>
+              <Text style={styles.buttonText}>Go Back</Text>
+            </TouchableOpacity>
+          </>}
       </View >
     </>
   )
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: "100%",
     height: "100%",
-  }, 
+  },
   spinText: {
     marginTop: 10,
     paddingbottom: 4,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffdacc',
 
   }
-  
+
 });
 
 export default Roulette;
