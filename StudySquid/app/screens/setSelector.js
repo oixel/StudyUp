@@ -20,9 +20,16 @@ const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
         return <Text>Loading fonts...</Text>;
     }
 
+    async function loadQuestionData(index) {
+        const response = await fetch(`../../assets/data/questionSet${index}.json`);
+        const questionData = await response.json();
+        return questionData;
+    }
+
     // Parse JSON question data from data files into array
-    const loadQuestionSet = (index) => {
-        console.log("Loading question set", index);
+    async function loadQuestionSet(index) {
+        const questionData = loadQuestionData(index);
+        console.log(questionData);
         setScreen(screen + 1);
     }
 
