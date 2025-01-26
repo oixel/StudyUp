@@ -39,24 +39,28 @@ const LeaderBoard = ( { setScreen }) => {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    title: {
-        fontFamily: 'PixelGame',
-        fontSize: 125,
-        marginBottom: -25,
-        transform: [{ rotate: '-90deg' }]
-    },
-    backgroundImage: {
-        flex: 1,
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-    },
+
+    const styles = StyleSheet.create({
+        container: {
+            flex: 0, // No expansion
+            justifyContent: "flex-start", // Align content towards the top
+            alignItems: "top", // Center horizontally
+            marginTop: 10, // Push content down slightly from the top
+        },
+        title: {
+            fontFamily: "PixelGame", // Use your font
+            fontSize: 80, // Adjust font size to fit on one line
+            textAlign: "center", // Center the text
+            lineHeight: 80, // Add some spacing between lines (optional, if wrapping occurs)
+            color: "#FFFFFF", // Adjust color if needed
+            transform: [{ rotate: '-90deg' }]
+        },
+        backgroundImage: {
+            flex: 1,
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+        },
 });
 
 export default LeaderBoard;
