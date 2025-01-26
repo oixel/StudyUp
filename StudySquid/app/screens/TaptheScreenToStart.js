@@ -8,7 +8,7 @@ import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 
 
 
-const PlaceOnForehead = ( { setScreen }) => {
+const TaptheScreenToStart = ( { setScreen }) => {
     const[focused, setFocused] = useState(-1);
 
     const [fontsLoaded] = useFonts({
@@ -33,7 +33,7 @@ const PlaceOnForehead = ( { setScreen }) => {
             />
 
             <View style={styles.container}>
-                <Text style={styles.title}>Place on Forehead</Text>
+                <Text style={styles.title}>Tap the Screen to Start</Text>
             </View>
         </>
     );
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default PlaceOnForehead;
+export default TaptheScreenToStart;
