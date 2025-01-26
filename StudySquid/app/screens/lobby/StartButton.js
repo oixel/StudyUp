@@ -8,7 +8,7 @@ const StartButton = ({ screen, setScreen, players }) => {
                 onPress={() => { if (players.length > 1) setScreen(screen + 1) }}
                 title="Start Studying!"
                 accessibilityLabel="Start studying!"
-                color='white'
+                color="rgb(6, 116, 90)"
             />
         </View>
     )
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     startButton: {
         minWidth: '90%',
         minHeight: 48,
-        backgroundColor: '#eb5c52',
+        backgroundColor: "#ffcaa4",
         justifyContent: 'center',
-        borderRadius: 12
+        borderRadius: 12,
     },
 })

@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, Button, ImageBackground } from 'react-native'
 import React, { useState } from 'react'
 
-const Roulette = ({ players }) => {
+const Roulette = ({ players, screen, setScreen }) => {
   const [randomName, setRandomName] = useState('');
   const [spinning, setSpinning] = useState(false);
   const [focused, setFocused] = useState(-1);
@@ -48,6 +48,12 @@ const Roulette = ({ players }) => {
             <Text style={styles.text}>{randomName}</Text>
           </>
         }
+       <Button
+                onPress={() => { setScreen(screen - 1) }}
+
+                title="Go Back"
+                color='white'
+            />
       </View >
     </>
   )
@@ -61,13 +67,21 @@ const styles = StyleSheet.create({
     marginTop: 100,
   },
   text: {
-    fontSize: 25,
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    borderWidth: 2,
+    borderColor: '#20232a',
+    borderRadius: 6,
+    fontFamily: 'PixelGame',
+    fontSize: 30,
+    backgroundColor: '#FADADD',
     marginBottom: 20,
     marginTop: 30,
+    
   },
   customFont: {
-    fontFamily: "Handjet",
-    fontSize: 40,
+    fontFamily: 'PixelGame',
+    fontSize: 50,
     marginBottom: 250,
   },
   backgroundImage: {
