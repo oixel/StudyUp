@@ -11,7 +11,15 @@ const PlayerBox = ({ players, setPlayers, focused, setFocused }) => {
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
             {players.map((_, index) => (
-                <View key={index}><NameBar index={index} players={players} setPlayers={setPlayers} focused={focused} setFocused={setFocused} /></View>
+                <View key={index}>
+                    <NameBar
+                        index={index}
+                        players={players}
+                        setPlayers={setPlayers}
+                        focused={focused}
+                        setFocused={setFocused}
+                    />
+                </View>
             ))}
         </ScrollView>
     )

@@ -1,0 +1,26 @@
+import React , {useState, useEffect} from 'react';
+import { StyleSheet, Text, View, Switch, FlatList, Pressable, Alert, TouchableOpacity, Dimensions} from 'react-native';
+import {DeviceMotion} from 'expo-sensors';4
+
+// remianing time 
+const getRemainingTime = (time) => {
+    const min = Math.floor(time/60);
+    const sec = time - (min * 60);
+    return {min, sec};
+}
+
+export default function HeadsUp(){
+    const [remainingSec, setRemainingSec] = useState(0);
+    const [isActive, setIsActive] = useState(false);
+    const {min, sec} = getRemainingTime(remainingSec);
+    const [gamma, setGamma] = useState(0);
+    const [gameState, setGameState] = useState(0);
+    const [gameMsg, setMsg] = useState('Make Phone Vertical to Begin!');
+    const [index, setIndex] = useState(0);
+    const [stater, setStater] = useState(-1);
+    const [correctWords, setCorrect] = useState(0);
+    const [passedWords, setPass] = useState(0);
+
+    
+
+}
