@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Button } from 'react-native'
+import { Text, View, StyleSheet, Button, ImageBackground } from 'react-native'
 import React, { useState } from 'react'
 
 const Roulette = ({ players }) => {
@@ -49,31 +49,32 @@ const Roulette = ({ players }) => {
           </>
         }
       </View >
-      );
+    </>
+  )
 };
 
-      const styles = StyleSheet.create({
-        container: {
-        flex: 1,
-      justifyContent: 'top',
-      alignItems: 'center',
-      marginTop: 100,
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'top',
+    alignItems: 'center',
+    marginTop: 100,
   },
-      text: {
-        fontSize: 25,
-      marginBottom: 20,
-      marginTop: 30,
+  text: {
+    fontSize: 25,
+    marginBottom: 20,
+    marginTop: 30,
   },
-      customFont: {
-        fontFamily: "Handjet",
-      fontSize: 40,
-      marginBottom: 250,
+  customFont: {
+    fontFamily: "Handjet",
+    fontSize: 40,
+    marginBottom: 250,
   },
-      backgroundImage: {
-        position: 'absolute',
-      width: "100%",
-      height: "100%",
-}
+  backgroundImage: {
+    position: 'absolute',
+    width: "100%",
+    height: "100%",
+  }
 });
 
-      export default Roulette;
+export default Roulette;
