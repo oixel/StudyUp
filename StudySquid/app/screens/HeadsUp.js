@@ -7,14 +7,12 @@ var phoneRotation = 0;
 const passedRange = [40, 90];
 const correctRange = [190, 250];
 
-const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers, currentPlayer }) => {
+const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers, currentPlayer, seenQuestions, setSeenQuestions }) => {
     rotation = { angle: 0 };
 
     DeviceMotion.setUpdateInterval(50);
 
     const [rotationState, setRotationState] = useState("");  // Stores the orientation of phone ("forward", "backward", or empty)
-
-    const [seenQuestions, setSeenQuestions] = useState([]);  // Stores the indexes of questions that have been previously seen to avoid repeating questions 
 
     const [question, setQuestion] = useState("");  // Holds the current question being presented on forehead
 
