@@ -7,8 +7,6 @@ import { Raleway_400Regular } from '@expo-google-fonts/raleway';
 import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 
 const TaptheScreenToStart = ({ screen, setScreen }) => {
-    const [focused, setFocused] = useState(-1);
-
     const [fontsLoaded] = useFonts({
         Raleway_400Regular,
         Quicksand_400Regular,
@@ -25,7 +23,6 @@ const TaptheScreenToStart = ({ screen, setScreen }) => {
             <ImageBackground
                 source={require('../../assets/images/plainBG.png')}
                 style={styles.backgroundImage}
-                onTouchStart={() => setFocused(-1)}
             />
 
             <View style={styles.container} onTouchStart={() => { setScreen(screen + 1); }}>

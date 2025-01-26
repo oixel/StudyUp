@@ -1,17 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { TextInput, View, StyleSheet, Keyboard, Image } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { TextInput, View, StyleSheet, Image } from 'react-native';
 
-
-
-const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
+const NameBar = ({ index, players, setPlayers }) => {
     const textInputRef = useRef(null);
 
     const [newUsername, setNewUsername] = useState(players[index].name);
-
-    useEffect(() => {
-        // Sets focus on newly created Name Bar
-        if (focused == index) textInputRef.current?.focus();
-    }, [focused]);
 
     const changeUsername = () => {
         if (newUsername) {
