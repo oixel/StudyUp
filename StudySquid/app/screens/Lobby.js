@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'Handjet',
-        fontSize: 60,
+        fontSize: 35,
     },
     backgroundImage: {
         position: 'absolute',
