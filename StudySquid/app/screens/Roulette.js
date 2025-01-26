@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, Button, ImageBackground } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-const Roulette = ({ players, screen, setScreen }) => {
+const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
   const [randomName, setRandomName] = useState('');
   const [spinning, setSpinning] = useState(false);
   const [focused, setFocused] = useState(-1);
@@ -14,7 +14,7 @@ const Roulette = ({ players, screen, setScreen }) => {
 
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * players.length);
-      setRandomName(players[randomIndex]);
+      setRandomName(players[randomIndex].name);
       counter += 1;
 
       // Stop after 2 seconds (2000 ms)
@@ -22,7 +22,11 @@ const Roulette = ({ players, screen, setScreen }) => {
         clearInterval(interval);
         setSpinning(false);
         const finalIndex = Math.floor(Math.random() * players.length); // Final random name
-        setRandomName(players[finalIndex]);
+        setRandomName(players[finalIndex].name);
+
+        // Move to next screen after a short delay
+        setCurrentPlayer(finalIndex);
+        setScreen(screen + 1);
       }
     }, 50); // Change name every 100 ms
   };

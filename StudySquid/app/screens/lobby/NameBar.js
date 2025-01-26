@@ -6,7 +6,7 @@ import { TextInput, View, StyleSheet, Keyboard, Image } from 'react-native';
 const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
     const textInputRef = useRef(null);
 
-    const [newUsername, setNewUsername] = useState(players[index]);
+    const [newUsername, setNewUsername] = useState(players[index].name);
 
     useEffect(() => {
         // Sets focus on newly created Name Bar
@@ -16,13 +16,13 @@ const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
     const changeUsername = () => {
         if (newUsername) {
             let newPlayers = [...players];
-            newPlayers[index] = newUsername;
+            newPlayers[index].name = newUsername;
             setPlayers(newPlayers);
         }
         else {
             console.log("Not allowed")
-            setNewUsername(players[index]);
-            textInputRef.current.value = players[index];
+            setNewUsername(players[index].name);
+            textInputRef.current.value = players[index].name;
         }
     }
 
@@ -35,13 +35,13 @@ const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
     return (
         <View
             style={[styles.container, (index % 2) ? styles.lightBackground : styles.darkBackground]} // add different emojis
-        > 
+        >
             <Image
                 source={require('../../../assets/images/pinkSmileyIcon.png')} // add a smiley face icon
                 style={styles.smileyIconImage}
             />
             <View style={styles.smileyIconImage} onTouchStart={() => { console.log("Change profile icon WIP!") }}></View>
-            
+
             <View style={styles.nameSection}>
                 <TextInput
                     style={{ fontSize: 24, fontWeight: '600', paddingVertical: 12 }}
@@ -83,9 +83,9 @@ const styles = StyleSheet.create({
     },
 
     smileyIconImage: {
-        width: 50,  
-        height: 50, 
-        resizeMode: 'contain', 
+        width: 50,
+        height: 50,
+        resizeMode: 'contain',
         margin: 'auto'
     },
 

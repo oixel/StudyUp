@@ -1,10 +1,13 @@
-# StudyUp
-StudyUp is a collaborative, educational take on the classic game "Heads Up!"
+<p align="center">
+  <img src=https://github.com/user-attachments/assets/681e582e-5b9c-4d61-a76c-43b466ebe835 width=45% height=45%>
+</p>
 
+# StudyUp
+StudyUp is a collaborative, educational take on the classic game "Heads Up!" <br>
 
 # Problem Statement + Solution
 Student of all levels can understand that traditional studying is often times an overwhelming, dull experience. Offering methods of group studying is something that addresses this problem by offering a game-ified solution.
-The countless benefits of group studying include improved understanding, increased motivation, and memory retention. On the Education track, we hope that this app can offer users a way to have fun and *Study Up* before their next exam!
+The countless benefits of group studying include improved understanding, increased motivation, and better memory retention. On the Education track, we hope that this app can offer users a way to have fun and *Study Up* before their next exam!
 
 # How To Play
 This game has a minimum of 2 players. <br>
@@ -18,6 +21,13 @@ This game has a minimum of 2 players. <br>
 # Sneak Peak (insert images)
 
 
+# Technologies Used
+<img src=https://github.com/user-attachments/assets/63bc4e8d-9c67-48eb-a2f8-31be2b835d4a width=25% height=25%>
+<img src=https://github.com/user-attachments/assets/a5843ba6-2241-4fd5-8fd2-2edcc0fef952 width=27% height=27%>
 
-# Future Implementations
+# Future Implementations + Next Steps
 Ideally, we want to implement cross-platform implementation with applications such Quizlet and Anki so that users can utilize their existing databases. Additionally, using AI to convert notes into sets can also be a great future addition.
+
+# Authors and Acknowledgement
+Contributers: ...
+
