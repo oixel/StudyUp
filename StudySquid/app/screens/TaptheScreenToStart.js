@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
-import  { useFonts } from 'expo-font';
+import { useFonts } from 'expo-font';
 
 import { Raleway_400Regular } from '@expo-google-fonts/raleway';
 import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 
 
 
-const TaptheScreenToStart = ( { setScreen }) => {
-    const[focused, setFocused] = useState(-1);
+const TaptheScreenToStart = () => {
+    const [focused, setFocused] = useState(-1);
 
     const [fontsLoaded] = useFonts({
         Raleway_400Regular,
@@ -23,7 +23,7 @@ const TaptheScreenToStart = ( { setScreen }) => {
     if (!fontsLoaded) {
         return <Text>Loading fonts...</Text>;
     }
-    
+
     return (
         <>
             <ImageBackground
