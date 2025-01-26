@@ -59,23 +59,24 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet }) => {
         else {
             let index = -1;
 
-            while (true) {
-                if (questionSet.length === seenQuestions.length) {
-                    console.log("Hit the end. Program moving to next screen");
-                    setSeenQuestions([]);
-                    setScreen(screen + 1);
-                    break;
-                }
-
-                index = Math.floor(Math.random() * questionSet.length);
-
-                if (!seenQuestions.includes(index)) {
-                    setSeenQuestions([...seenQuestions, index])
-                    break;
-                }
+            if (questionSet.length === seenQuestions.length) {
+                console.log("Hit the end. Program moving to next screen");
+                setSeenQuestions([]);
+                setScreen(screen + 1);
+                return;
             }
+            else {
+                while (true) {
+                    index = Math.floor(Math.random() * questionSet.length);
 
-            setQuestion(questionSet[index]["question"]);
+                    if (!seenQuestions.includes(index)) {
+                        setSeenQuestions([...seenQuestions, index])
+                        break;
+                    }
+                }
+
+                setQuestion(questionSet[index]["question"]);
+            }
         }
     }, [rotationState]);
 
