@@ -36,7 +36,7 @@ const setSelector = () => {
 
                 {/* Buttons for each study set */}
                 {['SWAMPHACK TRIVIA!', 'Anatomy', 'Data Structure', 'Zoology'].map((set, index) => (
-                    <TouchableOpacity key={index} onPress={() => navigation.navigate('TargetScreen')}>
+                    <TouchableOpacity key={index} onPress={() => { setScreen(screen + 1)}}>
                         <Text style={styles.text}>{set}</Text>
                     </TouchableOpacity>
                 ))}
