@@ -84,14 +84,6 @@ export default function Index() {
           setResults={setResults}
         />}
       {screen == 6 &&
-        <Results
-          screen={screen}
-          setScreen={setScreen}
-          questionSet={questionSet}
-          results={results}
-          setResults={setResults}
-        />}
-      {screen == 7 &&
         <LeaderBoard
           setScreen={setScreen}
           players={players}
