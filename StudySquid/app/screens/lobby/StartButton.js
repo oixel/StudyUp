@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     startButton: {
         minWidth: '90%',
         minHeight: 48,
-        backgroundColor: "#ffcaa4",
+        backgroundColor: "#ffd1c3",
         justifyContent: 'center',
         borderRadius: 12,
     },
