@@ -8,6 +8,7 @@ import Roulette from "./screens/Roulette";
 import TaptheScreenToStart from "./screens/TaptheScreenToStart";
 import HeadsUp from "./screens/HeadsUp";
 import Results from "./screens/Results";
+import { StatusBar } from "expo-status-bar";
 
 export default function Index() {
   const [screen, setScreen] = useState(0);
@@ -24,6 +25,10 @@ export default function Index() {
       }
       }
     >
+      {/* Hide clock and battery information */}
+      <StatusBar hidden />
+
+      {/* Display screen based on current screen state */}
       {screen == 0 && <Welcome screen={screen} setScreen={setScreen} />}
       {screen == 1 && <Lobby screen={screen} setScreen={setScreen} players={players} setPlayers={setPlayers} />}
       {screen == 2 && <SetSelector screen={screen} setScreen={setScreen} questionSet={questionSet} setQuestionSet={setQuestionSet} />}
