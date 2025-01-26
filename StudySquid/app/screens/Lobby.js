@@ -45,6 +45,7 @@ const Lobby = ({ screen, setScreen, players, setPlayers }) => {
     );
 }
 
+//just a comment
 export default Lobby;
 
 const styles = StyleSheet.create({
