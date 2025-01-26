@@ -13,7 +13,6 @@ const NameBar = ({ index, players, setPlayers }) => {
             setPlayers(newPlayers);
         }
         else {
-            console.log("Not allowed")
             setNewUsername(players[index].name);
             textInputRef.current.value = players[index].name;
         }
@@ -33,7 +32,7 @@ const NameBar = ({ index, players, setPlayers }) => {
                 source={require('../../../assets/images/pinkSmileyIcon.png')} // add a smiley face icon
                 style={styles.smileyIconImage}
             />
-            <View style={styles.smileyIconImage} onTouchStart={() => { console.log("Change profile icon WIP!") }}></View>
+            <View style={styles.smileyIconImage}></View>
 
             <View style={styles.nameSection}>
                 <TextInput
