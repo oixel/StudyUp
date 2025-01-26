@@ -7,14 +7,13 @@ var phoneRotation = 0;
 const passedRange = [40, 90];
 const correctRange = [190, 250];
 
-const HeadsUp = ({ screen, setScreen, isActive }) => {
+const HeadsUp = ({ screen, setScreen, isActive, questionSet }) => {
     rotation = { angle: 0 };
 
     DeviceMotion.setUpdateInterval(50);
 
     const [rotationState, setRotationState] = useState("");  // Stores the orientation of phone ("forward", "backward", or empty)
 
-    const [questionSet, setQuestionSet] = useState(["Cat", "Dog"]);  // Stores all the possible questions that can be chosen
     const [seenQuestions, setSeenQuestions] = useState([]);  // Stores the indexes of questions that have been previously seen to avoid repeating questions 
 
     const [question, setQuestion] = useState("");  // Holds the current question being presented on forehead
@@ -33,10 +32,10 @@ const HeadsUp = ({ screen, setScreen, isActive }) => {
                 const correct = isBetween(phoneRotation, correctRange[0], correctRange[1]);
 
                 // Set the rotation state based on whether the phone falls into the current range
-                if (passed) {
+                if (passed && rotationState != "backward") {
                     setRotationState("backward");
                 }
-                else if (correct) {
+                else if (correct && rotationState != "forward") {
                     setRotationState("forward");
                 }
                 else {
@@ -76,7 +75,7 @@ const HeadsUp = ({ screen, setScreen, isActive }) => {
                 }
             }
 
-            setQuestion(questionSet[index]);
+            setQuestion(questionSet[index]["question"]);
         }
     }, [rotationState]);
 
@@ -101,15 +100,15 @@ export default HeadsUp
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        width: '100%',
-        height: '100%',
+        width: 10000,
+        height: 10000,
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        transform: [{ rotate: '-90deg' }]
 
     },
     questionText: {
-        transform: [{ rotate: '-90deg' }],
         fontSize: 120
     }
 })

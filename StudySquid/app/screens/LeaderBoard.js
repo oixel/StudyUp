@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
-import { useFonts } from 'expo-font';
+import  { useFonts } from 'expo-font';
 
 import { Raleway_400Regular } from '@expo-google-fonts/raleway';
 import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 
 
 
-const TaptheScreenToStart = ({ screen, setScreen }) => {
-    const [focused, setFocused] = useState(-1);
+const LeaderBoard = ( { setScreen }) => {
+    const[focused, setFocused] = useState(-1);
 
     const [fontsLoaded] = useFonts({
         Raleway_400Regular,
@@ -23,18 +23,18 @@ const TaptheScreenToStart = ({ screen, setScreen }) => {
     if (!fontsLoaded) {
         return <Text>Loading fonts...</Text>;
     }
-
+    
     return (
         <>
             <ImageBackground
-                source={require('../../assets/images/plainBG.png')}
+                source={require('../../assets/images/LeaderBoard.png')}
                 style={styles.backgroundImage}
                 onTouchStart={() => setFocused(-1)}
             />
 
-            <View style={styles.container} onTouchStart={() => { setScreen(screen + 1); }}>
-                <Text style={styles.title}>Tap the Screen to Start</Text>
-            </View >
+            <View style={styles.container}>
+                <Text style={styles.title}>LeaderBoard</Text>
+            </View>
         </>
     );
 }
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TaptheScreenToStart;
+export default LeaderBoard;

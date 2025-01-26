@@ -5,6 +5,8 @@ import { useFonts } from 'expo-font';
 import { Raleway_400Regular } from '@expo-google-fonts/raleway';
 import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 
+import questionData from '../../assets/data/questionSets';
+
 
 const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
     const [focused, setFocused] = useState(-1);
@@ -20,9 +22,9 @@ const SetSelector = ({ screen, setScreen, questionSet, setQuestionSet }) => {
         return <Text>Loading fonts...</Text>;
     }
 
-    // Parse JSON question data from data files into array
-    const loadQuestionSet = (index) => {
-        console.log("Loading question set", index);
+    // Parse JSON question data from data files into array and move to next screen
+    function loadQuestionSet(index) {
+        setQuestionSet(questionData[index]);
         setScreen(screen + 1);
     }
 
