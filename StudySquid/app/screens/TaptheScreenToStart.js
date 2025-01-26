@@ -6,8 +6,6 @@ import { useFonts } from 'expo-font';
 import { Raleway_400Regular } from '@expo-google-fonts/raleway';
 import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 
-
-
 const TaptheScreenToStart = ({ screen, setScreen }) => {
     const [focused, setFocused] = useState(-1);
 
@@ -17,8 +15,6 @@ const TaptheScreenToStart = ({ screen, setScreen }) => {
         'Handjet': require('../../assets/fonts/Handjet.ttf'),
         'PixelGame': require('../../assets/fonts/PixelGame.otf'),
     });
-
-
 
     if (!fontsLoaded) {
         return <Text>Loading fonts...</Text>;
