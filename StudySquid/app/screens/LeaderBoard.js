@@ -1,61 +1,68 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Keyboard } from 'react-native';
-
+import React from 'react';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { useFonts } from 'expo-font';
 
-import { Raleway_400Regular } from '@expo-google-fonts/raleway';
-import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
+const LeaderBoard = ({setScreen, players}) => {
+  // Load fonts (optional, you can use default fonts too)
+  const [fontsLoaded] = useFonts({
+    'PixelGame': require('../../assets/fonts/PixelGame.otf'),
+  });
 
-const LeaderBoard = ({ setScreen }) => {
-    const [fontsLoaded] = useFonts({
-        Raleway_400Regular,
-        Quicksand_400Regular,
-        'Handjet': require('../../assets/fonts/Handjet.ttf'),
-        'PixelGame': require('../../assets/fonts/PixelGame.otf'),
-    });
+  // Sort players by score
+    const sortedPlayers = players.sort((a, b) => b.score - a.score);
 
+  return (
+    <>
+      <ImageBackground
+        source={require('../../assets/images/LeaderboardVertical.png')} 
+        style={styles.backgroundImage}
+      >
+        <View style={styles.container}>
+          <Text style={styles.title}>Leaderboard</Text>
 
-
-    if (!fontsLoaded) {
-        return <Text>Loading fonts...</Text>;
-    }
-
-    return (
-        <>
-            <ImageBackground
-                source={require('../../assets/images/LeaderBoard.png')}
-                style={styles.backgroundImage}
-            />
-
-            <View style={styles.container}>
-                <Text style={styles.title}>LeaderBoard</Text>
+          {/* Display the top 3 players */}
+          {sortedPlayers.slice(0, 3).map((player, index) => (
+            <View key={index} style={styles.playerRow}>
+              <Text style={styles.playerText}>
+                {index + 1}. {player.name} - {player.score} points
+              </Text>
             </View>
-        </>
-    );
-}
-
+          ))}
+        </View>
+      </ImageBackground>
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 0, // No expansion
-        justifyContent: "flex-start", // Align content towards the top
-        alignItems: "top", // Center horizontally
-        marginTop: 10, // Push content down slightly from the top
-    },
-    title: {
-        fontFamily: "PixelGame", // Use your font
-        fontSize: 80, // Adjust font size to fit on one line
-        textAlign: "center", // Center the text
-        lineHeight: 80, // Add some spacing between lines (optional, if wrapping occurs)
-        color: "#FFFFFF", // Adjust color if needed
-        transform: [{ rotate: '-90deg' }]
-    },
-    backgroundImage: {
-        flex: 1,
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-    },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
+  },
+  title: {
+    fontFamily: 'PixelGame', // Custom font, optional
+    fontSize: 50,
+    textAlign: 'center',
+    color: 'black',
+    marginBottom: 20,
+  },
+  playerRow: {
+    marginBottom: 10,
+  },
+  playerText: {
+    fontFamily: 'PixelGame', // Custom font, optional
+    fontSize: 25,
+    textAlign: 'center',
+    color: 'white',
+  },
+  backgroundImage: {
+    flex: 1,
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
 });
 
 export default LeaderBoard;
