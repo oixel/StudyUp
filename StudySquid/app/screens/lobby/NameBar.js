@@ -18,7 +18,6 @@ const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
             setPlayers(newPlayers);
         }
         else {
-            console.log("Not allowed")
             setNewUsername(players[index]);
             textInputRef.current.value = players[index];
         }
@@ -32,14 +31,9 @@ const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
 
     return (
         <View
-            style={[styles.container, (index % 2) ? styles.lightBackground : styles.darkBackground]} // add different emojis
-        > 
-            <Image
-                source={require('../../../assets/images/pinkSmileyIcon.png')}
-                style={styles.smileyIconImage}
-            />
-            <View style={styles.smileyIconImage} onTouchStart={() => { console.log("Change profile icon WIP!") }}></View>
-            
+            style={[styles.container, (index % 2) ? styles.lightBackground : styles.darkBackground]}
+        >
+            <View style={styles.iconSection} ></View>
             <View style={styles.nameSection}>
                 <TextInput
                     style={{ fontSize: 24, fontWeight: '600', paddingVertical: 12 }}
@@ -73,17 +67,19 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
+    iconSection: {
+        height: 48,
+        width: 48,
+        marginVertical: 'auto',
+        marginRight: 16,
+        padding: 0,
+        backgroundColor: 'blue',
+        borderRadius: 24
+    },
     iconImage: {
         width: 40,  // Adjust the width of the image
         height: 40, // Adjust the height of the image
         resizeMode: 'contain', // Ensure the image is contained within the box
-        margin: 'auto'
-    },
-
-    smileyIconImage: {
-        width: 50,  
-        height: 50, 
-        resizeMode: 'contain', 
         margin: 'auto'
     },
 
@@ -95,10 +91,10 @@ const styles = StyleSheet.create({
     },
 
     lightBackground: {
-        backgroundColor: "rgb(236, 200, 222)"
+        backgroundColor: 'lightgrey'
     },
 
     darkBackground: {
-        backgroundColor: "rgb(142, 169, 209)",
+        backgroundColor: 'grey'
     }
 });
