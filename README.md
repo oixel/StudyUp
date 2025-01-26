@@ -50,5 +50,5 @@ Ideally, we want to implement cross-platform implementation with applications su
 # Authors
 Contributers: Oixel Romero, Divyanshi Saini, Kriti Shah, Krithika Kondapalli
 
-*Thank you SwampHacks!*
+*Thank you SwampHacks! 🐊*
 
