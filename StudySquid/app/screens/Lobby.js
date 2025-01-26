@@ -19,12 +19,6 @@ const Lobby = ({ screen, setScreen, players, setPlayers }) => {
         'PixelGame': require('../../assets/fonts/PixelGame.otf'),
     });
 
-
-
-    if (!fontsLoaded) {
-        return <Text>Loading fonts...</Text>;
-    }
-
     return (
         <>
             <View style={styles.container}>

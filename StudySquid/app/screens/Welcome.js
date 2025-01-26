@@ -21,16 +21,14 @@ const Welcome = ({ screen, setScreen }) => {
 
     return (
         <>
-
-
             <View style={styles.container}>
                 <Text style={styles.title}>Welcome to</Text>
                 <Text style={styles.title2}>Study</Text>
                 <Text style={styles.title2}>Up!</Text>
-                <TouchableOpacity style={styles.button} onPress={() => console.log('Change to Lobby')}>
+                <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText} onPress={() => { setScreen(screen + 1) }}>Start!</Text>
                 </TouchableOpacity>
-            </View>
+            </View >
         </>
     );
 }

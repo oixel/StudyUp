@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'PixelGame',
-        fontSize: 125,
+        fontSize: 70,
+        textAlign: 'center',
         marginBottom: -25,
         transform: [{ rotate: '-90deg' }]
     },
