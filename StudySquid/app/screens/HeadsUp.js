@@ -28,6 +28,12 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers
         if (isActive) {
             // Makes round end after 30 seconds
             timeoutRef.current = setTimeout(() => {
+                // Add last question that is not inputted to be wrong
+                setResults({
+                    ...results,
+                    [seenQuestions[seenQuestions.length - 1]]: false,
+                });
+
                 isActive = false;
                 setScreen(screen + 1);
             }, 30000);
