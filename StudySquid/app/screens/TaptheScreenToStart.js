@@ -8,7 +8,7 @@ import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 
 
 
-const TaptheScreenToStart = () => {
+const TaptheScreenToStart = ({ screen, setScreen }) => {
     const [focused, setFocused] = useState(-1);
 
     const [fontsLoaded] = useFonts({
@@ -32,9 +32,9 @@ const TaptheScreenToStart = () => {
                 onTouchStart={() => setFocused(-1)}
             />
 
-            <View style={styles.container}>
+            <View style={styles.container} onTouchStart={() => { setScreen(screen + 1); }}>
                 <Text style={styles.title}>Tap the Screen to Start</Text>
-            </View>
+            </View >
         </>
     );
 }
