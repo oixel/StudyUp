@@ -22,7 +22,7 @@ This game has a minimum of 2 players. <br>
 # Sneak Peak
 <img src=https://github.com/user-attachments/assets/2eb96d65-33d7-4167-be98-22c45960e4bf width=25% height=25%>
 <img src=https://github.com/user-attachments/assets/f271bca1-66d1-42ca-bf72-35a1d51bd4c6 width=25% height=25%>
-<img src=https://github.com/user-attachments/assets/3e81ed19-9012-4443-885c-b881e37ece82 width=25% height=25%>
+<img src=https://github.com/user-attachments/assets/ed1f3a4e-2e30-4342-a089-e8e5a960fa39 width=26% height=26%>
 
 # Technologies Used
 <img src=https://github.com/user-attachments/assets/63bc4e8d-9c67-48eb-a2f8-31be2b835d4a width=25% height=25%>
