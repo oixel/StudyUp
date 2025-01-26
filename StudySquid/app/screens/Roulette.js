@@ -87,8 +87,9 @@ const styles = StyleSheet.create({
   },
   customFont: {
     fontFamily: 'PixelGame',
-    fontSize: 50,
-    marginBottom: 235,
+    fontSize: 75,
+    marginTop: 230
+
   },
   backgroundImage: {
     position: 'absolute',
