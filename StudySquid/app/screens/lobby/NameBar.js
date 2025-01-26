@@ -1,11 +1,27 @@
-import React, { useState } from 'react';
-import { Text, TextInput, View, StyleSheet } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { TextInput, View, StyleSheet, Keyboard, Image } from 'react-native';
 
-const NameBar = ({ players, setPlayers, index }) => {
-    const changeUsername = (newUsername) => {
-        let newPlayers = [...players];
-        newPlayers[index] = newUsername;
-        setPlayers(newPlayers);
+const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
+    const textInputRef = useRef(null);
+
+    const [newUsername, setNewUsername] = useState(players[index]);
+
+    useEffect(() => {
+        // Sets focus on newly created Name Bar
+        if (focused == index) textInputRef.current?.focus();
+    }, [focused]);
+
+    const changeUsername = () => {
+        if (newUsername) {
+            let newPlayers = [...players];
+            newPlayers[index] = newUsername;
+            setPlayers(newPlayers);
+        }
+        else {
+            console.log("Not allowed")
+            setNewUsername(players[index]);
+            textInputRef.current.value = players[index];
+        }
     }
 
     const deletePlayer = () => {
@@ -15,10 +31,26 @@ const NameBar = ({ players, setPlayers, index }) => {
     }
 
     return (
-        <View style={[styles.container, (index % 2) ? styles.lightBackground : styles.darkBackground]} >
-            <View style={styles.iconSection}></View>
-            <View style={styles.nameSection}><TextInput onChangeText={newUsername => changeUsername(newUsername)}>{players[index]}</TextInput></View>
-            <View style={styles.trashIcon} onTouchStart={() => { deletePlayer() }}></View>
+        <View
+            style={[styles.container, (index % 2) ? styles.lightBackground : styles.darkBackground]}
+        >
+            <View style={styles.iconSection} onTouchStart={() => { console.log("Change profile icon WIP!") }}></View>
+            <View style={styles.nameSection}>
+                <TextInput
+                    style={{ fontSize: 24, fontWeight: '600', paddingVertical: 12 }}
+                    ref={textInputRef}
+                    onChangeText={(input) => { setNewUsername(input) }}
+                    onSubmitEditing={() => { changeUsername(); }}
+                >
+                    {newUsername}
+                </TextInput>
+            </View>
+            <Image
+                source={require('../../../assets/images/trashIcon.png')} // Adjust the path as needed
+                style={styles.iconImage}
+                onTouchStart={() => { deletePlayer() }}
+            />
+
         </View >
     );
 }
@@ -27,24 +59,29 @@ export default NameBar;
 
 const styles = StyleSheet.create({
     container: {
-        minWidth: '90%',
-        minHeight: 64,
+        width: '100%',
+        height: 64,
+        paddingHorizontal: 8,
+
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
     },
 
     iconSection: {
-        minHeight: 64,
-        minWidth: 64,
-    },
-
-    trashIcon: {
-        minHeight: 48,
-        minWidth: 48,
-        margin: 12,
+        height: 48,
+        width: 48,
+        marginVertical: 'auto',
+        marginRight: 16,
         padding: 0,
-        backgroundColor: 'red'
+        backgroundColor: 'blue',
+        borderRadius: 24
+    },
+    iconImage: {
+        width: 40,  // Adjust the width of the image
+        height: 40, // Adjust the height of the image
+        resizeMode: 'contain', // Ensure the image is contained within the box
+        margin: 'auto'
     },
 
     nameSection: {

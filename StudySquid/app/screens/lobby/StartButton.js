@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, Button } from 'react-native'
+import { StyleSheet, View, Button } from 'react-native'
 import React from 'react'
 
-const StartButton = () => {
+const StartButton = ({ screen, setScreen, players }) => {
     return (
         <View style={styles.startButton}>
             <Button
-                onPress={() => { console.log("Start studying WIP") }}
+                onPress={() => { if (players.length > 1) setScreen(screen + 1) }}
                 title="Start Studying!"
                 accessibilityLabel="Start studying!"
                 color='white'

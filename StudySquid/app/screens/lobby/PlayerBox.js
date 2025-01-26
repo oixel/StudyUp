@@ -1,17 +1,17 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
-import React, { useEffect } from 'react'
+import { View, StyleSheet, ScrollView } from 'react-native'
+import React, { useState, useEffect } from 'react'
 
 import NameBar from "./NameBar";
 
-const PlayerBox = ({ players, setPlayers }) => {
+const PlayerBox = ({ players, setPlayers, focused, setFocused }) => {
     useEffect(() => {
-        if (players.length) console.log("New Player Added");
-    }, [players])
+        setFocused(players.length - 1);
+    }, [players.length])
 
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
             {players.map((_, index) => (
-                <View key={index}><NameBar players={players} setPlayers={setPlayers} index={index} /></View>
+                <View key={index}><NameBar index={index} players={players} setPlayers={setPlayers} focused={focused} setFocused={setFocused} /></View>
             ))}
         </ScrollView>
     )
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
         gap: 24,
 
         minWidth: '90%',
+        maxWidth: '90%',
         minHeight: 250,
         maxHeight: 250,
         borderRadius: 12,
