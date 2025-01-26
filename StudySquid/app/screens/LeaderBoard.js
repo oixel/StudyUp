@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { useFonts } from 'expo-font';
 
 const LeaderBoard = ({setScreen, players}) => {
-  // Load fonts (optional, you can use default fonts too)
   const [fontsLoaded] = useFonts({
     'PixelGame': require('../../assets/fonts/PixelGame.otf'),
   });
@@ -42,7 +41,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   title: {
-    fontFamily: 'PixelGame', // Custom font, optional
+    fontFamily: 'PixelGame',
     fontSize: 50,
     textAlign: 'center',
     color: 'black',
@@ -52,10 +51,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   playerText: {
-    fontFamily: 'PixelGame', // Custom font, optional
+    fontFamily: 'PixelGame',
     fontSize: 25,
     textAlign: 'center',
-    color: 'white',
+    color: 'black',
   },
   backgroundImage: {
     flex: 1,
