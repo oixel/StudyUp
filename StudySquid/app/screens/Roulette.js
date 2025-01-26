@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, Button, ImageBackground } from 'react-native'
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 
 const Roulette = ({ players }) => {
   const [randomName, setRandomName] = useState('');
@@ -29,18 +29,28 @@ const Roulette = ({ players }) => {
 
   return (
     <>
-    <ImageBackground
-      source={require('../../assets/images/FullStartScreen.png')}
-      style={styles.backgroundImage}
-      onTouchStart={() => setFocused(-1)}
-    />
-    <View style={styles.container}>
-      <Text style={styles.customFont}>PLAYER TURN</Text>
-      <Text style={styles.text}>{randomName}</Text>
-      <Button title="Spin" onPress={getRandomName} disabled={spinning} />
-    </View>
+      <ImageBackground
+        source={require('../../assets/images/FullStartScreen.png')}
+        style={styles.backgroundImage}
+        onTouchStart={() => setFocused(-1)}
+      />
+      <View style={styles.container}>
+        {(!randomName || spinning) &&
+          <>
+            <Text style={styles.customFont}>WHO'S UP?</Text>
+            <Text style={styles.text}>{randomName}</Text>
+            <Button title="Spin" onPress={getRandomName} disabled={spinning} />
+          </>
+        }
+        {(randomName && !spinning) &&
+          <>
+            <Text style={styles.customFont}>It's your turn:</Text>
+            <Text style={styles.text}>{randomName}</Text>
+          </>
+        }
+      </View >
     </>
-  );
+  )
 };
 
 const styles = StyleSheet.create({
@@ -64,7 +74,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: "100%",
     height: "100%",
-}
+  }
 });
 
 export default Roulette;
