@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { TextInput, View, StyleSheet, Keyboard, Image } from 'react-native';
 
+
+
 const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
     const textInputRef = useRef(null);
 
@@ -35,7 +37,7 @@ const NameBar = ({ index, players, setPlayers, focused, setFocused }) => {
             style={[styles.container, (index % 2) ? styles.lightBackground : styles.darkBackground]} // add different emojis
         > 
             <Image
-                source={require('../../../assets/images/pinkSmileyIcon.png')}
+                source={require('../../../assets/images/pinkSmileyIcon.png')} // add a smiley face icon
                 style={styles.smileyIconImage}
             />
             <View style={styles.smileyIconImage} onTouchStart={() => { console.log("Change profile icon WIP!") }}></View>
