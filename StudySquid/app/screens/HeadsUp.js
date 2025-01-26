@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { DeviceMotion } from 'expo-sensors';
 
 var phoneRotation = 0;
@@ -7,7 +7,7 @@ var phoneRotation = 0;
 const passedRange = [40, 90];
 const correctRange = [190, 250];
 
-const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers, currentPlayer, seenQuestions, setSeenQuestions }) => {
+const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers, currentPlayer, seenQuestions, setSeenQuestions, results, setResults }) => {
     rotation = { angle: 0 };
 
     DeviceMotion.setUpdateInterval(50);
@@ -16,17 +16,26 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers
 
     const [question, setQuestion] = useState("");  // Holds the current question being presented on forehead
 
+    const timeoutRef = useRef(null);  // Allows timeout to be cleared after game is completed if cards run out
+
     // Return a boolean on whether the current value fits into the given range
     const isBetween = (value, minimum, maximum) => {
         return minimum <= value && value <= maximum;
     }
 
-    if (isActive) {
-        // Makes round end after 30 seconds
-        setTimeout(() => {
-            setScreen(screen + 1);
-        }, 30000);
+    // Initialize timer only when this screen is first set
+    useEffect(() => {
+        if (isActive) {
+            // Makes round end after 30 seconds
+            timeoutRef.current = setTimeout(() => {
+                isActive = false;
+                setScreen(screen + 1);
+            }, 30000);
+        }
+    }, [isActive])
 
+
+    if (isActive) {
         useEffect(() => {
             const subscription = DeviceMotion.addListener(({ rotation }) => {
                 phoneRotation = Math.abs(rotation.gamma) * 90;
@@ -55,6 +64,12 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers
     useEffect(() => {
         if (rotationState == "backward") {
             setQuestion("Pass");
+
+            // Add incorrect answer to results
+            setResults({
+                ...results,
+                [seenQuestions[seenQuestions.length - 1]]: false,
+            });
         }
         else if (rotationState == "forward") {
             setQuestion("Correct!");
@@ -63,6 +78,12 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers
             let newPlayers = players;
             newPlayers[currentPlayer] = { name: newPlayers[currentPlayer].name, score: newPlayers[currentPlayer].score + 1 };
             setPlayers(newPlayers);
+
+            // Add correct answer to results
+            setResults({
+                ...results,
+                [seenQuestions[seenQuestions.length - 1]]: true,
+            });
         }
         else {
             let index = -1;
@@ -70,7 +91,10 @@ const HeadsUp = ({ screen, setScreen, isActive, questionSet, players, setPlayers
             if (questionSet.length === seenQuestions.length) {
                 setSeenQuestions([]);
                 setScreen(screen + 1);
-                return;
+
+                // Wipe timeout and clear the reference
+                clearTimeout(timeoutRef.current);
+                timeoutRef.current = null;
             }
             else {
                 while (true) {
