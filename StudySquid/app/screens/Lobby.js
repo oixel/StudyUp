@@ -18,6 +18,7 @@ const Lobby = ({ screen, setScreen, players, setPlayers }) => {
         Raleway_400Regular,
         Quicksand_400Regular,
         'Handjet': require('../../assets/fonts/Handjet.ttf'),
+        'PixelGame': require('../../assets/fonts/PixelGame.otf'),
     });
 
 
@@ -54,8 +55,9 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        fontFamily: 'Handjet',
-        fontSize: 60,
+        fontFamily: 'PixelGame',
+        fontSize: 100,
+        marginBottom: -25
     },
     backgroundImage: {
         position: 'absolute',
