@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     fontFamily: 'PixelGame', // Custom font, optional
     fontSize: 25,
     textAlign: 'center',
-    color: 'white',
+    color: 'black',
   },
   backgroundImage: {
     flex: 1,
