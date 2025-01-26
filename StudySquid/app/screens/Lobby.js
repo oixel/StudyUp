@@ -5,7 +5,7 @@ import PlayerBox from "./lobby/PlayerBox";
 import AddPlayerButton from "./lobby/AddPlayerButton";
 import StartButton from "./lobby/StartButton";
 
-import  { useFonts } from 'expo-font';
+import { useFonts } from 'expo-font';
 
 import { Raleway_400Regular } from '@expo-google-fonts/raleway';
 import { Quicksand_400Regular } from '@expo-google-fonts/quicksand';
@@ -26,7 +26,7 @@ const Lobby = ({ screen, setScreen, players, setPlayers }) => {
     if (!fontsLoaded) {
         return <Text>Loading fonts...</Text>;
     }
-    
+
     return (
         <>
             <ImageBackground
@@ -56,13 +56,9 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-<<<<<<< HEAD
-        fontSize: 48
-=======
         fontFamily: 'PixelGame',
         fontSize: 100,
         marginBottom: -25
->>>>>>> bbae11add2d0b5710b44e2c9405d8798399a6d14
     },
     backgroundImage: {
         position: 'absolute',
