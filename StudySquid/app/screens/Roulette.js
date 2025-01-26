@@ -48,7 +48,7 @@ const Roulette = ({ screen, setScreen, players, setCurrentPlayer }) => {
             <Text style={styles.text}>{randomName}</Text>
           </>
         }
-        {!spinning && <Button
+        {(!spinning && !randomName) && <Button
           onPress={() => { setScreen(screen - 1) }}
 
           title="Go Back"
