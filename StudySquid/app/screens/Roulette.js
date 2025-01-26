@@ -1,9 +1,10 @@
-import { Text, View, StyleSheet, Button } from 'react-native'
+import { Text, View, StyleSheet, Button, ImageBackground } from 'react-native'
 import React, { Component, useState } from 'react'
 
 const Roulette = ({ players }) => {
   const [randomName, setRandomName] = useState('');
   const [spinning, setSpinning] = useState(false);
+  const [focused, setFocused] = useState(-1);
 
   const getRandomName = () => {
     if (spinning) return; // Prevent triggering if already spinning
@@ -27,11 +28,18 @@ const Roulette = ({ players }) => {
   };
 
   return (
+    <>
+    <ImageBackground
+      source={require('../../assets/images/FullStartScreen.png')}
+      style={styles.backgroundImage}
+      onTouchStart={() => setFocused(-1)}
+    />
     <View style={styles.container}>
       <Text style={styles.customFont}>PLAYER TURN</Text>
       <Text style={styles.text}>{randomName}</Text>
       <Button title="Spin" onPress={getRandomName} disabled={spinning} />
     </View>
+    </>
   );
 };
 
@@ -51,8 +59,12 @@ const styles = StyleSheet.create({
     fontFamily: "Handjet",
     fontSize: 40,
     marginBottom: 250,
-  }
-
+  },
+  backgroundImage: {
+    position: 'absolute',
+    width: "100%",
+    height: "100%",
+}
 });
 
 export default Roulette;
