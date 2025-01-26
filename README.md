@@ -6,7 +6,7 @@
 StudyUp is a collaborative, educational take on the classic game "Heads Up!" <br>
 
 # Problem Statement + Solution
-Student of all levels can understand that traditional studying is often times an overwhelming, dull experience. Offering methods of group studying is something that addresses this problem by offering a game-ified solution.
+Students of all levels can understand that traditional studying is oftentimes an overwhelming, dull experience. Offering methods of group studying is something that addresses this problem by offering a game-ified solution.
 The countless benefits of group studying include improved understanding, increased motivation, and better memory retention. On the Education track, we hope that this app can offer users a way to have fun and *Study Up* before their next exam!
 
 # Sneak Peak
@@ -19,7 +19,7 @@ This game has a minimum of 2 players. <br>
 1. Click **+ Add Player** and add the corresponding name.
 2. When you're ready, click **Start Studying!** to be directed to choose a set.
 4. After choosing a set, the roulette reveals the upcoming player.
-5. Start playing by placing the phone on your forehead! If you get a question right, lift the phone up. If you can't seem to get it right, turn it down.
+5. Start playing by placing the phone on your forehead! If you get a question right, rotate the phone up. If you can't seem to get it right, turn it down.
 6. Post x amount of time, you will be able to see the terminologies you passed and missed.
 7. Time for another game! Choose another player to go.
 8. Once all players have gone, or you have clicked exit, view the leaderboard stats!
@@ -45,10 +45,10 @@ The following steps highlight how to download and gain access to StudyUp!
 
 
 # Future Implementations + Next Steps
-Ideally, we want to implement cross-platform implementation with applications such Quizlet and Anki so that users can utilize their existing databases. Additionally, using AI to convert notes into sets can also be a great future addition.
+Ideally, we want to implement cross-platform implementation with applications such as Quizlet and Anki so that users can utilize their existing databases. Additionally, using AI to convert notes into sets can also be a great future addition.
 
-# Authors
-Contributers: Oixel Romero, Divyanshi Saini, Kriti Shah, Krithika Kondapalli
+# Contributors
+Divyanshi Saini, Kriti Shah, Krithika Kondapalli, Oixel Romero
 
 *Thank you SwampHacks! 🐊*
 
